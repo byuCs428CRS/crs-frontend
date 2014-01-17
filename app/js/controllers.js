@@ -15,7 +15,8 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
     $scope.filterOptions = {
 		levels: {}
 	};
-	
+	$scope.sortBy = 'dept';
+
 	angular.forEach($scope.courseLevels, function(level) {
 		$scope.filterOptions.levels[level] = true;
 	});
@@ -25,7 +26,7 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 		var q = angular.lowercase($scope.filterOptions.searchQuery);
 		return (!angular.isDefined(q) || q == "" || 
 			(angular.lowercase(course.name).indexOf(q) >= 0 || 
-			angular.lowercase(course.description).indexOf(q) >= 0)) ? true : false;
+			angular.lowercase(course.description).indexOf(q) >= 0));
 	};
 	
 	// Filters by course level
