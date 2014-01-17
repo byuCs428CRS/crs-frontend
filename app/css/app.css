@@ -5,3 +5,19 @@ body {
 .main-content {
     padding: 40px 15px;
 }
+
+.sortable-header {
+	cursor: pointer;
+}
+
+.sorted-asc {
+	background-image: url('../img/icon_up_sort_arrow.png');
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.sorted-desc {
+	background-image: url('../img/icon_down_sort_arrow.png');
+	background-repeat: no-repeat;
+	background-position: right;
+}

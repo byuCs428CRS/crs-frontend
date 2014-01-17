@@ -36,7 +36,7 @@
             <div class="col-md-12">
                 <form class="form-inline" role="form">
                     <!--The filters are spread across this line (adding up to 12)-->
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 col-md-2 col-lg-2">
                         <label class="sr-only" for="filterByDepartment">Email address</label>
                         <select id="filterByDepartment" class="form-control" ng-model="basicFilters.dept" ng-change="filterOptions.searchQuery = ''">
                             <option value="">All departments</option>
@@ -49,7 +49,7 @@
                         <input id="filterByDescriptionQuery" class="form-control" ng-model="filterOptions.searchQuery" placeholder="Search class names & descriptions">
                     </div>
                     <div class="col-sm-5">
-						<small>Course Level</small><br>
+						<small class="clearfix">Course Levels</small>
                         <span ng-repeat="level in courseLevels">
 							<label class="checkbox checkbox-inline" for="{{level}}">
 								<input type="checkbox" ng-model="filterOptions.levels[level]" name="group" id="{{level}}"> {{ level }}
@@ -67,14 +67,16 @@
                 <table class="table table-hover table-striped table-condensed">
                     <thead>
                         <tr>
-                            <th>Class</th>
-                            <th>Name</th>
-                            <th>Description</th>
+                            <th class="sortable-header" ng-class="sortedClass('dept')" ng-click="updateSort('dept')">Dept</th>
+                            <th class="sortable-header" ng-class="sortedClass('number')" ng-click="updateSort('number')">#</th>
+                            <th class="sortable-header" ng-class="sortedClass('name')" ng-click="updateSort('name')">Name</th>
+                            <th class="sortable-header" ng-class="sortedClass('description')" ng-click="updateSort('description')">Description</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="course in filtered = (courses | filter:basicFilters | filter:searchQueryFilter | filter:courseLevelFilter)">
-                            <td>{{ course.dept + ' ' + course.number }}</td>
+                        <tr ng-repeat="course in filtered = (courses | filter:basicFilters | filter:searchQueryFilter | filter:courseLevelFilter | orderBy:sortBy:desc)">
+                            <td>{{ course.dept }}</td>
+                            <td>{{ course.number }}</td>
                             <td>{{ course.name }}</td>
                             <td>{{ course.description }}</td>
                         </tr>

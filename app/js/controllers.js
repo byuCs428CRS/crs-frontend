@@ -23,20 +23,26 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
     // Searches both course name and course description fields
     $scope.searchQueryFilter = function(course) {
 		var q = angular.lowercase($scope.filterOptions.searchQuery);
-		if (!angular.isDefined(q) || q == "" || 
-		(angular.lowercase(course.name).indexOf(q) >= 0 || angular.lowercase(course.description).indexOf(q) >= 0)) {
-			return true;
-		} else {
-			return false;
-		}
+		return (!angular.isDefined(q) || q == "" || 
+			(angular.lowercase(course.name).indexOf(q) >= 0 || 
+			angular.lowercase(course.description).indexOf(q) >= 0)) ? true : false;
 	};
 	
 	// Filters by course level
 	$scope.courseLevelFilter = function(course) {
 		var targetLevel = course.number[0] + '00';
-		if ($scope.filterOptions.levels[targetLevel])
-			return true;
-		else
-			return false;
+		return ($scope.filterOptions.levels[targetLevel]) ? true : false;
 	};
+	
+	// Sorts table by the selected column and updates ascending/descending order
+	$scope.updateSort = function(selected) {
+		$scope.desc = $scope.sortBy == selected && !$scope.desc; 
+		$scope.sortBy = selected;
+	};
+	
+	// Retrieves the styling class for a sortable table header
+	$scope.sortedClass = function(selected) {
+		return $scope.sortBy == selected ? ($scope.desc ? 'sorted-desc' : 'sorted-asc') : '';
+	};
+	
 });
