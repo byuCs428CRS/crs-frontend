@@ -1,38 +1,42 @@
 'use strict';
 
 /* Controllers */
-var classregApp = angular.module('classregApp', ['classregApp.filters']);
+var classregApp = angular.module('classregApp', []);
 
-classregApp.controller('ClassListCtrl', function($scope, $http) {
-    $http.get('classes/classes.json').success(function(data) {
-        $scope.classes = data;
+classregApp.controller('CourseListCtrl', function($scope, $http) {
+	
+    $http.get('courses/courses.json').success(function(data) {
+        $scope.courses = data;
     });
-    $http.get('classes/departments.json').success(function(data) {
+    $http.get('courses/departments.json').success(function(data) {
         $scope.depts = data;
-    })
-
+    });
+    $scope.courseLevels = ['100', '200', '300', '400', '500', '600'];
+    $scope.filterOptions = {
+		levels: {}
+	};
+	
+	angular.forEach($scope.courseLevels, function(level) {
+		$scope.filterOptions.levels[level] = true;
+	});
+    
+    // Searches both course name and course description fields
+    $scope.searchQueryFilter = function(course) {
+		var q = angular.lowercase($scope.filterOptions.searchQuery);
+		if (!angular.isDefined(q) || q == "" || 
+		(angular.lowercase(course.name).indexOf(q) >= 0 || angular.lowercase(course.description).indexOf(q) >= 0)) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+	
+	// Filters by course level
+	$scope.courseLevelFilter = function(course) {
+		var targetLevel = course.number[0] + '00';
+		if ($scope.filterOptions.levels[targetLevel])
+			return true;
+		else
+			return false;
+	};
 });
-
-//filterOptions:
-// - dept
-// - searchQuery (search names & descriptions)
-// - classLevel
-//   - classLevel.100, classLevel.200, classLevel.300, classLevel.400, classLevel.500 : (each true/false)
-
-angular.module('classregApp.filters', [])
-    .filter('classFilter', [function () {
-        return function (classes, filterOptions) {
-            if (!angular.isUndefined(classes) && !angular.isUndefined(filterOptions)) {
-                var tempClasses = [];
-
-                classregApp.filter('filter')(classes, filterOptions);
-
-                angular.forEach(classes, function (_class) {
-                    tempClasses.push(_class);
-                });
-                return tempClasses;
-            } else {
-                return classes;
-            }
-        };
-    }]);
