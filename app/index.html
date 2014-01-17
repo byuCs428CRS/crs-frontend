@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="classregApp">
+<head>
+  <meta charset="utf-8">
+  <title>Class Listing</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="ClassListCtrl">
+	<p>Total number of classes: {{ classes.length}}</p>
+	<table>
+		<tr>
+			<th>Class</th>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+		<tr ng-repeat="class in classes">
+			<td>{{ class.dept + ' ' + class.number }}</td>
+			<td>{{ class.name }}</td>
+			<td>{{ class.description }}</td>
+		</tr>
+	</table>
+</body>
+</html>
