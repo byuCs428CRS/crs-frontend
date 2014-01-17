@@ -9,10 +9,6 @@
     <title>Class Listings</title>
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="lib/angular/angular.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="lib/jquery/jquery-1.10.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
 </head>
 <body ng-controller="ClassListCtrl">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -36,7 +32,7 @@
 
     <div class="container">
         <div class="col-md-12 main-content">
-            <p>Total number of classes: {{ classes.length}}</p>
+            <h2>Class listings</h2>
             <table class="table table-hover">
                 <tr>
                     <th>Class</th>
@@ -51,5 +47,9 @@
             </table>
         </div>
     </div>
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="lib/jquery/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
