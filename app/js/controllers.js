@@ -45,7 +45,7 @@ classregApp.controller('ClassListCtrl', function($scope) {
 			'dept': 'CS',
 			'number': '142',
 			'name': 'Intro to Computer Programming',
-			'description': 'Basics of computer programming in C++.',
+			'description': 'Basics of computer programming in C++. pearl',
             'hours': '3.0'
 		},
 		{
@@ -91,4 +91,5 @@ classregApp.controller('ClassListCtrl', function($scope) {
             'hours': '2.0'
 		}
 	];
+
 });
