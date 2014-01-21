@@ -8,6 +8,7 @@ body {
 
 .sortable-header {
 	cursor: pointer;
+	background-color: rgb(230, 230, 230);
 }
 
 .sorted-asc {
@@ -20,4 +21,8 @@ body {
 	background-image: url('../img/icon_down_sort_arrow.png');
 	background-repeat: no-repeat;
 	background-position: right;
+}
+
+#coursesTable td {
+	white-space: nowrap;
 }

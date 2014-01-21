@@ -62,31 +62,37 @@
 
         <div class="row">
             <div class="col-md-12">
-                <table class="table table-hover table-striped table-condensed table-bordered">
+                <table id="coursesTable" class="table table-striped table-condensed table-bordered">
                     <thead>
                         <tr>
                             <th class="sortable-header" ng-class="sortedClass('dept')" ng-click="updateSort('dept')">Dept</th>
                             <th class="sortable-header" ng-class="sortedClass('number')" ng-click="updateSort('number')">#</th>
                             <th class="sortable-header" ng-class="sortedClass('name')" ng-click="updateSort('name')">Name</th>
-							<th class="sortable-header" ng-class="sortedClass('professor')" ng-click="updateSort('professor')">Professor</th>
-							<th class="sortable-header" ng-class="sortedClass('day')" ng-click="updateSort('day')">Day</th>
-							<th class="sortable-header" ng-class="sortedClass('building')" ng-click="updateSort('day')">Building</th>
-                            <th class="sortable-header" ng-class="sortedClass('description')" ng-click="updateSort('description')">Description</th>
+							<th>Professor</th>
+							<th>Day</th>
+							<th>Building</th>
                         </tr>
                     </thead>
                     <tbody ng-repeat="course in filtered = (courses | filter:basicFilters | filter:searchQueryFilter | filter:courseLevelFilter | orderBy:sortBy:desc)">
-                        <tr ng-repeat="section in course.sections">
+                        <tr>
                             <td>{{ course.dept }}</td>
                             <td>{{ course.number }}</td>
                             <td>{{ course.name }}</td>
+							<td></td>
+							<td></td>
+							<td></td>
+                        </tr>
+                        <tr ng-repeat="section in course.sections">
+							<td></td>
+							<td></td>
+							<td></td>
 							<td>{{ section.professorSurname + ", "+section.professorGivenName }}</td>
 							<td>
 								<div ng-repeat="time in section.times">
-									<div ng-repeat="day in time.days">{{ day }}</div>
+									<span ng-repeat="day in time.days">{{ day }}</span>
 								</div>
 							</td>
 							<td>{{ section.buildingAbbreviation }}</td>
-                            <td>{{ course.description }}</td>
                         </tr>
                     </tbody>
                 </table>
