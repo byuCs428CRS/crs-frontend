@@ -26,3 +26,7 @@ body {
 #coursesTable td {
 	white-space: nowrap;
 }
+
+#coursesTable table {
+	margin-bottom: 0;
+}
