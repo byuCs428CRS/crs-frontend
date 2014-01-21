@@ -1,86 +1,460 @@
 [
-		{
-			"dept": "CS",
-			"number": "428",
-			"name": "Software Engineering",
-			"description": "An introduction to building and managing software in a team of engineers.",
-            "hours": "3.0"
-		},
-		{
-			"dept": "CS",
-			"number": "450",
-			"name": "Digital Signal Processing",
-			"description": "Processing signals, including images, audio, video, etc.",
-            "hours": "3.0"
-		},
-        {
-			"dept": "CS",
-			"number": "124",
-			"name": "Computer Systems",
-			"description": "Introduction to computing from a hardware and software perspective.",
-            "hours": "3.0"
-		},
-		{
-			"dept": "CS",
-			"number": "142",
-			"name": "Intro to Computer Programming",
-			"description": "Basics of computer programming in C++.",
-            "hours": "3.0"
-		},
-        {
-			"dept": "CS",
-			"number": "240",
-			"name": "Advanced Programming Concepts",
-			"description": "Advanced topics in computer programming.",
-            "hours": "4.0"
-		},
-		{
-			"dept": "CS",
-			"number": "330",
-			"name": "Concepts of Programming Lang",
-			"description": "Study of programming languages and their features and differences.",
-            "hours": "3.0"
-		},
-		{
-			"dept": "Engl",
-			"number": "316",
-			"name": "Technical Communication",
-			"description": "Writing and communication skills relating to technical fields.",
-            "hours": "3.0"
-		},
-		{
-			"dept": "Math",
-			"number": "313",
-			"name": "Elementary Linear Algebra",
-			"description": "Basics of linear algebra, including matrices and other crap.",
-            "hours": "3.0"
-		},
-		{
-			"dept": "Math",
-			"number": "112",
-			"name": "Calculus 1",
-			"description": "Calculus basics, including differentiation and its applications.",
-            "hours": "3.0"
-		},
-		{
-			"dept": "Math",
-			"number": "113",
-			"name": "Calculus 2",
-			"description": "More advanced calculus concepts, including integrals and their applications.",
-            "hours": "3.0"
-		},
-		{
-			"dept": "Rel A",
-			"number": "357",
-			"name": "The Pearl of Great Price",
-			"description": "Studies in the books of Moses, Abraham, Joseph Smith - History, and Joseph Smith - Matthew.",
-            "hours": "2.0"
-		},
-		{
-			"dept": "Writing",
-			"number": "150",
-			"name": "Writing & Rhetoric",
-			"description": "Writing and communication skills focusing on rhetorical and persuasive methods.",
-            "hours": "3.0"
-		}
+    {
+        "dept": "CS",
+        "number": "428",
+        "name": "Software Engineering",
+        "description": "An introduction to building and managing software in a team of engineers.",
+        "hours": "3.0",
+        "sections": [
+            {
+                "professorSurname": "Knutson",
+				"professorGivenName": "Charles",
+                "number": "1",
+                "times": [
+                    {
+                        "days": [
+                            "Tu",
+                            "Th"
+                        ],
+                        "times": [
+                            {
+                                "start": "1500",
+                                "end": "1615"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Joseph Knight Building",
+				"buildingAbbreviation": "JKB",
+				"room": "334"
+            }
+        ]
+    },
+    {
+        "dept": "CS",
+        "number": "450",
+        "name": "Digital Signal Processing",
+        "description": "Processing signals, including images, audio, video, etc.",
+        "hours": "3.0",
+		"sections": [
+            {
+                "professorSurname": "Barrett",
+				"professorGivenName": "William A",
+                "number": "1",
+                "times": [
+                    {
+                        "days": [
+                            "M",
+                            "W",
+							"F"
+                        ],
+                        "times": [
+                            {
+                                "start": "0900",
+                                "end": "0950"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "134"
+            }
+        ]
+    },
+    {
+        "dept": "CS",
+        "number": "124",
+        "name": "Computer Systems",
+        "description": "Introduction to computing from a hardware and software perspective.",
+        "hours": "3.0",
+		"sections": [
+            {
+                "professorSurname": "Roper",
+				"professorGivenName": "Paul Ross",
+                "number": "1",
+                "times": [
+                    {
+                        "days": [
+                            "Tu",
+                            "Th"
+                        ],
+                        "times": [
+                            {
+                                "start": "0930",
+                                "end": "1045"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "1170"
+            },
+			{
+                "professorSurname": "Roper",
+				"professorGivenName": "Paul Ross",
+                "number": "1",
+                "times": [
+                    {
+                        "days": [
+                            "M",
+                            "W",
+							"F"
+                        ],
+                        "times": [
+                            {
+                                "start": "1400",
+                                "end": "1450"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "1170"
+            },
+			{
+                "professorSurname": "Roper",
+				"professorGivenName": "Paul Ross",
+                "number": "1",
+                "times": [
+                    {
+                        "days": [
+                            "M",
+                            "W",
+							"F"
+                        ],
+                        "times": [
+                            {
+                                "start": "1500",
+                                "end": "1550"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "1170"
+            }
+        ]
+    },
+    {
+        "dept": "CS",
+        "number": "142",
+        "name": "Intro to Computer Programming",
+        "description": "Basics of computer programming in C++.",
+        "hours": "3.0",
+        "sections": [
+            {
+                "professorSurname": "Burton",
+				"professorGivenName": "Robert Preece",
+                "number": "6",
+                "times": [
+                    {
+                        "days": [
+                            "M",
+                            "W",
+							"F"
+                        ],
+                        "times": [
+                            {
+                                "start": "0800",
+                                "end": "0850"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "1170"
+            },
+			{
+                "professorSurname": "Burton",
+				"professorGivenName": "Robert Preece",
+                "number": "1",
+                "times": [
+                    {
+                        "days": [
+                            "M",
+                            "W",
+							"F"
+                        ],
+                        "times": [
+                            {
+                                "start": "0900",
+                                "end": "0950"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "1170"
+            },
+			{
+                "professorSurname": "Burton",
+				"professorGivenName": "Robert Preece",
+                "number": "2",
+                "times": [
+                    {
+                        "days": [
+                            "M",
+                            "W",
+							"F"
+                        ],
+                        "times": [
+                            {
+                                "start": "1000",
+                                "end": "1050"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "1170"
+            },
+			{
+                "professorSurname": "Burton",
+				"professorGivenName": "Robert Preece",
+                "number": "3",
+                "times": [
+                    {
+                        "days": [
+                            "M",
+                            "W",
+							"F"
+                        ],
+                        "times": [
+                            {
+                                "start": "1100",
+                                "end": "1150"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "1170"
+            },
+			{
+                "professorSurname": "Farrell",
+				"professorGivenName": "Ryan Matthew",
+                "number": "4",
+                "times": [
+                    {
+                        "days": [
+                            "M",
+                            "W",
+							"F"
+                        ],
+                        "times": [
+                            {
+                                "start": "1300",
+                                "end": "1350"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "1170"
+            },
+			{
+                "professorSurname": "Child",
+				"professorGivenName": "Paul Evan",
+                "number": "1",
+                "times": [
+                    {
+                        "days": [
+                            "T"
+                        ],
+                        "times": [
+                            {
+                                "start": "1715",
+                                "end": "1940"
+                            }
+                        ]
+                    }
+                ],
+				"building": "SALT LAKE",
+				"buildingAbbreviation": "SLC",
+				"room": "413"
+            }
+        ]
+    },
+    {
+        "dept": "CS",
+        "number": "240",
+        "name": "Advanced Programming Concepts",
+        "description": "Advanced topics in computer programming.",
+        "hours": "4.0",
+		"sections": [
+			{
+                "professorSurname": "Woodfield",
+				"professorGivenName": "Scott",
+                "number": "1",
+                "times": [
+                    {
+                        "days": [
+                            "M",
+                            "W",
+							"F"
+                        ],
+                        "times": [
+                            {
+                                "start": "0900",
+                                "end": "0950"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "120"
+            },
+			{
+                "professorSurname": "Woodfield",
+				"professorGivenName": "Scott",
+                "number": "2",
+                "times": [
+                    {
+                        "days": [
+                            "M",
+                            "W",
+							"F"
+                        ],
+                        "times": [
+                            {
+                                "start": "1000",
+                                "end": "1050"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "120"
+            },
+			{
+                "professorSurname": "Rodham",
+				"professorGivenName": "Kenneth",
+                "number": "3",
+                "times": [
+                    {
+                        "days": [
+                            "Tu",
+							"Th"
+                        ],
+                        "times": [
+                            {
+                                "start": "1335",
+                                "end": "1450"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "120"
+            },
+			{
+                "professorSurname": "Rodham",
+				"professorGivenName": "Kenneth",
+                "number": "4",
+                "times": [
+                    {
+                        "days": [
+                            "Tu",
+							"Th"
+                        ],
+                        "times": [
+                            {
+                                "start": "1500",
+                                "end": "1615"
+                            }
+                        ]
+                    }
+                ],
+				"building": "Talmage Building",
+				"buildingAbbreviation": "TMCB",
+				"room": "120"
+            }
+		]
+    },
+    {
+        "dept": "CS",
+        "number": "330",
+        "name": "Concepts of Programming Lang",
+        "description": "Study of programming languages and their features and differences.",
+        "hours": "3.0",
+		"sections": []
+    },
+    {
+        "dept": "Engl",
+        "number": "316",
+        "name": "Technical Communication",
+        "description": "Writing and communication skills relating to technical fields.",
+        "hours": "3.0",
+		"sections": [
+			{
+				"professorSurname": "Pilcher",
+				"professorGivenName": "Toni",
+				"number": "1",
+				"times": [
+					{
+						"days": [
+							"M",
+							"W",
+							"F"
+						],
+						"times": [
+							{
+								"start": "0800",
+								"end": "0850"
+							}
+						]
+					}
+				],
+				"building": "Joseph Knight Building",
+				"buildingAbbreviation": "JKB"
+			}
+		]
+    },
+    {
+        "dept": "Math",
+        "number": "313",
+        "name": "Elementary Linear Algebra",
+        "description": "Basics of linear algebra, including matrices and other crap.",
+        "hours": "3.0"
+    },
+    {
+        "dept": "Math",
+        "number": "112",
+        "name": "Calculus 1",
+        "description": "Calculus basics, including differentiation and its applications.",
+        "hours": "3.0"
+    },
+    {
+        "dept": "Math",
+        "number": "113",
+        "name": "Calculus 2",
+        "description": "More advanced calculus concepts, including integrals and their applications.",
+        "hours": "3.0"
+    },
+    {
+        "dept": "Rel A",
+        "number": "357",
+        "name": "The Pearl of Great Price",
+        "description": "Studies in the books of Moses, Abraham, Joseph Smith - History, and Joseph Smith - Matthew.",
+        "hours": "2.0"
+    },
+    {
+        "dept": "Writing",
+        "number": "150",
+        "name": "Writing & Rhetoric",
+        "description": "Writing and communication skills focusing on rhetorical and persuasive methods.",
+        "hours": "3.0"
+    }
 ]

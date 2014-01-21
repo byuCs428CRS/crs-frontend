@@ -68,14 +68,24 @@
                             <th class="sortable-header" ng-class="sortedClass('dept')" ng-click="updateSort('dept')">Dept</th>
                             <th class="sortable-header" ng-class="sortedClass('number')" ng-click="updateSort('number')">#</th>
                             <th class="sortable-header" ng-class="sortedClass('name')" ng-click="updateSort('name')">Name</th>
+							<th class="sortable-header" ng-class="sortedClass('professor')" ng-click="updateSort('professor')">Professor</th>
+							<th class="sortable-header" ng-class="sortedClass('day')" ng-click="updateSort('day')">Day</th>
+							<th class="sortable-header" ng-class="sortedClass('building')" ng-click="updateSort('day')">Building</th>
                             <th class="sortable-header" ng-class="sortedClass('description')" ng-click="updateSort('description')">Description</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr ng-repeat="course in filtered = (courses | filter:basicFilters | filter:searchQueryFilter | filter:courseLevelFilter | orderBy:sortBy:desc)">
+                    <tbody ng-repeat="course in filtered = (courses | filter:basicFilters | filter:searchQueryFilter | filter:courseLevelFilter | orderBy:sortBy:desc)">
+                        <tr ng-repeat="section in course.sections">
                             <td>{{ course.dept }}</td>
                             <td>{{ course.number }}</td>
                             <td>{{ course.name }}</td>
+							<td>{{ section.professorSurname + ", "+section.professorGivenName }}</td>
+							<td>
+								<div ng-repeat="time in section.times">
+									<div ng-repeat="day in time.days">{{ day }}</div>
+								</div>
+							</td>
+							<td>{{ section.buildingAbbreviation }}</td>
                             <td>{{ course.description }}</td>
                         </tr>
                     </tbody>
