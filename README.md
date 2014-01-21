@@ -25,7 +25,7 @@ To run the tests:
 1. Tests use [Karma](http://karma-runner.github.io/0.10/index.html). Ensure you have all necessary plugins for Karma using this command:
 
   ```
-  npm install
+  npm -g install
   ```
 
 2. Start the Karma server (from crs-frontend directory, probably in a different terminal tab/window):
