@@ -23,6 +23,15 @@ body {
 	background-position: right;
 }
 
+
+.selectable-tbody:hover .selectable-td {
+    background-color: rgb(238, 238, 238);
+}
+
+.selected-tbody .selectable-td {
+    background-color: rgb(238, 238, 238) !important;
+}
+
 #coursesTable td {
 	white-space: nowrap;
 }
