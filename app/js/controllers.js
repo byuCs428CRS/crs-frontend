@@ -5,18 +5,26 @@ var classregApp = angular.module('classregApp', []);
 
 classregApp.controller('CourseListCtrl', function($scope, $http) {
 	
-    $http.get('courses/courses.json').success(function(data) {
-        $scope.courses = data;
+	$http.get('courses/backend-response.json').success(function(data) {
+        $scope.departments = data.departments
     });
-    $http.get('courses/departments.json').success(function(data) {
-        $scope.depts = data;
-    });
+	
+    // var crossSiteRequest = createCORSRequest('GET', 'http://localhost:8000/app/courses/backend-response.json')
+	// crossSiteRequest.send()
+	// crossSiteRequest.onload = function() {
+		// $scope.departments = jQuery.parseJSON(crossSiteRequest.responseText).departments
+	// }
+	// crossSiteRequest.onerror = function() {
+		// console.log("there was an error")
+	// }
     $scope.courseLevels = ['100', '200', '300', '400', '500', '600'];
     $scope.filterOptions = {
 		levels: {}
 	};
 	$scope.sortBy = 'dept';
-
+	$scope.filteredDept = ''
+	$scope.selectedCourse = undefined
+	
 	angular.forEach($scope.courseLevels, function(level) {
 		$scope.filterOptions.levels[level] = true;
 	});
@@ -25,13 +33,18 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
     $scope.searchQueryFilter = function(course) {
 		var q = angular.lowercase($scope.filterOptions.searchQuery);
 		return (!angular.isDefined(q) || q == "" || 
-			(angular.lowercase(course.name).indexOf(q) >= 0 || 
+			(angular.lowercase(course.title).indexOf(q) >= 0 || 
 			angular.lowercase(course.description).indexOf(q) >= 0));
 	};
 	
+	//Filters by department
+	$scope.departmentFilter = function(dept) {
+		return $scope.filteredDept === /* all departments */ '' || $scope.filteredDept === dept.shortCode
+	}
+	
 	// Filters by course level
 	$scope.courseLevelFilter = function(course) {
-		var targetLevel = course.number[0] + '00';
+		var targetLevel = course.courseId[0] + '00';
 		return ($scope.filterOptions.levels[targetLevel]) ? true : false;
 	};
 	

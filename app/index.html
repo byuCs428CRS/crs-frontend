@@ -37,9 +37,9 @@
                 <form class="form-inline" role="form">
                     <div class="col-sm-3 col-md-2 col-lg-2">
                         <label class="sr-only" for="filterByDepartment">Email address</label>
-                        <select id="filterByDepartment" class="form-control" ng-model="basicFilters.dept" ng-change="filterOptions.searchQuery = ''">
+                        <select id="filterByDepartment" class="form-control" ng-model="filteredDept" ng-change="filterOptions.searchQuery = ''">
                             <option value="">All departments</option>
-                            <option ng-repeat="dept in depts" value="{{dept}}">{{dept}}</option>
+                            <option ng-repeat="dept in departments" value="{{dept.shortCode}}">{{dept.shortCode}}</option>
                         </select>
                     </div>
                     <div class="col-sm-4">
@@ -65,27 +65,27 @@
                 <table id="coursesTable" class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th class="sortable-header" ng-class="sortedClass('dept')" ng-click="updateSort('dept')">Dept</th>
-                            <th class="sortable-header" ng-class="sortedClass('number')" ng-click="updateSort('number')">#</th>
+                            <th class="sortable-header" ng-class="sortedClass('dept.title')" ng-click="updateSort('dept.title')">Dept</th>
+                            <th class="sortable-header" ng-class="sortedClass('course.courseId')" ng-click="updateSort('course.courseId')">#</th>
                             <th class="sortable-header" ng-class="sortedClass('name')" ng-click="updateSort('name')">Name</th>
                         </tr>
                     </thead>
-                    <tbody class="selectable-tbody" ng-class="course == selectedCourse ? 'selected-tbody' : ''" ng-repeat="course in filtered = (courses | filter:basicFilters | filter:searchQueryFilter | filter:courseLevelFilter | orderBy:sortBy:desc)" ng-click="$parent.selectedCourse = course">
-                        <tr>
-                            <td class="selectable-td">{{ course.dept }}</td>
-                            <td class="selectable-td">{{ course.number }}</td>
-                            <td class="selectable-td">{{ course.name }}</td>
-                        </tr>
-                    </tbody>
+					<tbody ng-repeat="dept in filtered = (departments | filter:departmentFilter)" ng-click="selectedDept = dept">
+						<tr ng-repeat="course in filtered = (dept.courses | filter:courseLevelFilter | filter:searchQueryFilter | orderBy:sortBy:desc)"  class="selectable-tbody"  ng-click="selectedCourse = course" ng-class="course == selectedCourse ? 'selected-tbody' : ''">
+							<td class="selectable-td">{{ dept.shortCode }}</td>
+							<td class="selectable-td">{{ course.courseId }}</td>
+							<td class="selectable-td">{{ course.title }}</td>
+						</tr>
+					</tbody>
                 </table>
             </div>
             <div class="col-md-5 well">
                 <h4 ng-show="!selectedCourse">Select a class to view its details.</h4>
                 <div ng-show="selectedCourse">
-                    <h3>{{ selectedCourse.dept + " " + selectedCourse.number}}</h3>
-                    <h4>{{ selectedCourse.name }}</h4>
+                    <h3>{{ selectedDept + " " + selectedCourse.courseId}}</h3>
+                    <h4>{{ selectedCourse.title }}</h4>
                     <p>{{ selectedCourse.description }}</p>
-                    <p>Credit hours: {{ selectedCourse.hours }}</p>
+                    <p>Credit hours: {{ selectedCourse.credits }}</p>
                     <table class="table table-condensed">
                         <thead>
                             <tr>
@@ -130,5 +130,6 @@
     <script src="js/app.js"></script>
     <script src="lib/jquery/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+	<script src="js/cross-site.js"></script>
 </body>
 </html>
