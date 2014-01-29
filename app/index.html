@@ -72,9 +72,9 @@
                     </thead>
                     <tbody class="selectable-tbody" ng-class="course == selectedCourse ? 'selected-tbody' : ''" ng-repeat="course in filtered = (courses | filter:basicFilters | filter:searchQueryFilter | filter:courseLevelFilter | orderBy:sortBy:desc)" ng-click="$parent.selectedCourse = course">
                         <tr>
-                            <td class="selectable-td">{{ course.dept }}</td>
-                            <td class="selectable-td">{{ course.number }}</td>
-                            <td class="selectable-td">{{ course.name }}</td>
+                            <td class="selectable-td">{{ course.title }}</td>
+                            <td class="selectable-td">{{ course.courseId }}</td>
+                            <td class="selectable-td">{{ course.title }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -82,8 +82,8 @@
             <div class="col-md-5 well">
                 <h4 ng-show="!selectedCourse">Select a class to view its details.</h4>
                 <div ng-show="selectedCourse">
-                    <h3>{{ selectedCourse.dept + " " + selectedCourse.number}}</h3>
-                    <h4>{{ selectedCourse.name }}</h4>
+                    <h3>{{ selectedCourse.dept.shortCode + " " + selectedCourse.courseId}}</h3>
+                    <h4>{{ selectedCourse.title }}</h4>
                     <p>{{ selectedCourse.description }}</p>
                     <p>Credit hours: {{ selectedCourse.hours }}</p>
                     <table class="table table-condensed">

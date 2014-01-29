@@ -5,11 +5,18 @@ var classregApp = angular.module('classregApp', []);
 
 classregApp.controller('CourseListCtrl', function($scope, $http) {
 	
-    $http.get('courses/courses.json').success(function(data) {
-        $scope.courses = data;
-    });
-    $http.get('courses/departments.json').success(function(data) {
-        $scope.depts = data;
+    $http.get('courses/backend-response.json').success(function(data) {
+        $scope.departments = data.departments;
+		$scope.courses = []
+		angular.forEach($scope.departments, function(dept) {
+			angular.forEach(dept.courses, function(course) {
+				var clonedCourse = jQuery.extend(true, {}, course)
+				course.dept = {}
+				course.dept.title = dept.title
+				course.dept.shortCode = dept.shortCode
+				$scope.courses.push(course)
+			});
+		});
     });
     $scope.courseLevels = ['100', '200', '300', '400', '500', '600'];
     $scope.filterOptions = {
@@ -31,7 +38,7 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 	
 	// Filters by course level
 	$scope.courseLevelFilter = function(course) {
-		var targetLevel = course.number[0] + '00';
+		var targetLevel = course.courseId[0] + '00';
 		return ($scope.filterOptions.levels[targetLevel]) ? true : false;
 	};
 	
