@@ -36,6 +36,7 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 					});
 					newCourse.sections.push(newSection)
 				});
+				// console.log(newCourse)
 				$scope.courses.push(newCourse)
 			});
 		});
@@ -70,8 +71,8 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 	};
 	
 	//Filters by department
-	$scope.departmentFilter = function(dept) {
-		return $scope.filteredDept === /* all departments */ '' || $scope.filteredDept === dept.shortCode
+	$scope.departmentFilter = function(course) {
+		return $scope.filteredDept === /* all departments */ '' || $scope.filteredDept === course.dept.shortCode
 	}
 	
 	// Filters by course level

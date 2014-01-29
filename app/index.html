@@ -66,11 +66,11 @@
                     <thead>
                         <tr>
                             <th class="sortable-header" ng-class="sortedClass('dept.title')" ng-click="updateSort('dept.title')">Dept</th>
-                            <th class="sortable-header" ng-class="sortedClass('course.courseId')" ng-click="updateSort('course.courseId')">#</th>
-                            <th class="sortable-header" ng-class="sortedClass('name')" ng-click="updateSort('name')">Name</th>
+                            <th class="sortable-header" ng-class="sortedClass('courseId')" ng-click="updateSort('courseId')">#</th>
+                            <th class="sortable-header" ng-class="sortedClass('title')" ng-click="updateSort('title')">Name</th>
                         </tr>
                     </thead>
-                    <tbody class="selectable-tbody" ng-class="course == selectedCourse ? 'selected-tbody' : ''" ng-repeat="course in filtered = (courses | filter:basicFilters | filter:searchQueryFilter | filter:courseLevelFilter | orderBy:sortBy:desc)" ng-click="$parent.selectedCourse = course">
+                    <tbody class="selectable-tbody" ng-class="course == selectedCourse ? 'selected-tbody' : ''" ng-repeat="course in filtered = (courses | filter:basicFilters | filter:searchQueryFilter | filter:courseLevelFilter | filter:departmentFilter | orderBy:sortBy:desc)" ng-click="$parent.selectedCourse = course">
                         <tr>
                             <td class="selectable-td">{{ course.dept.shortCode }}</td>
                             <td class="selectable-td">{{ course.courseId }}</td>
