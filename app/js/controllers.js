@@ -51,6 +51,8 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 		// console.log("there was an error")
 	// }
     $scope.courseLevels = ['100', '200', '300', '400', '500', '600'];
+    $scope.currentSemester = "Summer 2014" //Should do some kind of logic or API call here
+    $scope.plannedCourses = []
     $scope.filterOptions = {
 		levels: {}
 	};
@@ -120,5 +122,30 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 		}
 		return result
 	};
+
+	// check if a course is planned, where cid is a course/section id that looks like this: "CS256-1" for section 1
+	$scope.isPlanned = function(cid) {
+		for (var i = 0; i < $scope.plannedCourses.length; i++) {
+			if ($scope.plannedCourses[i].cid == cid) {
+				return true;
+			}
+		}
+		return false;
+	};
 	
+	$scope.addCourseToPlan = function(course, section) {
+		// CS236-1
+		var cid = course.dept.shortCode + course.courseId + "-" + section.sectionId;
+		if (!$scope.isPlanned(cid)) {
+			var plannedCourse = new Object();
+			plannedCourse.cid = cid;
+			plannedCourse.dept = course.dept;
+			plannedCourse.courseId = course.courseId;
+			plannedCourse.sectionId = section.sectionId;
+			plannedCourse.instructor = section.professor;
+			plannedCourse.classPeriods = section.classPeriods;
+			$scope.plannedCourses.push(plannedCourse);
+		}
+	};
+
 });

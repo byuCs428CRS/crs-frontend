@@ -61,7 +61,7 @@
         <br><br>
 
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-4">
                 <table id="coursesTable" class="table table-striped table-bordered">
                     <thead>
                         <tr>
@@ -79,39 +79,67 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-md-5 well">
-                <h4 ng-show="!selectedCourse">Select a class to view its details.</h4>
-                <div ng-show="selectedCourse">
-                    <h3>{{ selectedCourse.dept.shortCode + " " + selectedCourse.courseId}}</h3>
-                    <h4>{{ selectedCourse.title }}</h4>
-                    <p>{{ selectedCourse.description }}</p>
-                    <p>Credit hours: {{ selectedCourse.credits }}</p>
+            <div class="col-md-4">
+                <div class="well">
+                    <h4 ng-show="!selectedCourse">Select a class to view its details.</h4>
+                    <div ng-show="selectedCourse">
+                        <h3>{{ selectedCourse.dept.shortCode + " " + selectedCourse.courseId}}</h3>
+                        <h4>{{ selectedCourse.title }}</h4>
+                        <p>{{ selectedCourse.description }}</p>
+                        <p>Credit hours: {{ selectedCourse.credits }}</p>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Instructor</th>
+                                    <th>Class Periods</th>
+                                    <th>Location</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody ng-show="!selectedCourse.sections || !selectedCourse.sections.length">
+                                <tr>
+                                    <td colspan="4">No sections offered this semester!</td>
+                                </tr>
+                            </tbody>
+                            <tbody ng-repeat="section in selectedCourse.sections">
+                                <tr>
+                                    <td>{{ section.professor }}</td>
+                                    <td>
+                                        {{ classPeriodsToString(section.classPeriods) }}
+                                    </td>
+                                    <td>{{section.room}} {{ section.buildingAbbreviation }}</td>
+                                    <td><a href="#" ng-click="addCourseToPlan(selectedCourse, section)" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="well">
+                    <h3>My Planned Courses</h3>
+                    <h4>{{currentSemester}}</h4>
                     <table class="table table-condensed">
                         <thead>
                             <tr>
+                                <th>Course</th>
+                                <th>Section</th>
                                 <th>Instructor</th>
                                 <th>Class Periods</th>
-                                <th>Location</th>
                             </tr>
+                            <tbody ng-repeat="course in plannedCourses">
+                                <tr>
+                                    <td>{{ course.dept.shortCode }} {{ course.courseId }}</td>
+                                    <td>{{ course.sectionId }}</td>
+                                    <td>{{ course.instructor }}</td>
+                                    <td>{{ classPeriodsToString(course.classPeriods) }}</td>
+                                </tr>
+                            </tbody>
                         </thead>
-                        <tbody ng-show="!selectedCourse.sections || !selectedCourse.sections.length">
-                            <tr>
-                                <td colspan="4">No sections offered this semester!</td>
-                            </tr>
-                        </tbody>
-                        <tbody ng-repeat="section in selectedCourse.sections">
-                            <tr>
-                                <td>{{ section.professor }}</td>
-                                <td>
-                                    {{ classPeriodsToString(section.classPeriods) }}
-                                </td>
-                                <td>{{section.room}} {{ section.buildingAbbreviation }}</td>
-                            </tr>
-                        </tbody>
                     </table>
-
                 </div>
             </div>
+
         </div>
 
     </div>
