@@ -67,9 +67,13 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
     // Searches both course name and course description fields
     $scope.searchQueryFilter = function(course) {
 		var q = angular.lowercase($scope.filterOptions.searchQuery);
-		return (!angular.isDefined(q) || q == "" || 
-			(angular.lowercase(course.title).indexOf(q) >= 0 || 
-			angular.lowercase(course.description).indexOf(q) >= 0));
+		var noQuery = !angular.isDefined(q) || q == ""
+		var titleMatch = angular.lowercase(course.title).indexOf(q) >= 0
+		var descrMatch = angular.lowercase(course.description).indexOf(q) >= 0
+		var abbrevMatch = angular.lowercase(course.dept+course.courseId).indexOf(q)
+			|| angular.lowercase(course.dept+' '+course.courseId).indexOf(q);
+		
+		return noQuery || titleMatch || descrMatch || abbrevMatch
 	};
 	
 	//Filters by department
