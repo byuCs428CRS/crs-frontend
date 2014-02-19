@@ -1,460 +1,2522 @@
-[
-    {
-        "dept": "CS",
-        "number": "428",
-        "name": "Software Engineering",
-        "description": "An introduction to building and managing software in a team of engineers.",
-        "hours": "3.0",
-        "sections": [
-            {
-                "professorSurname": "Knutson",
-				"professorGivenName": "Charles",
-                "number": "1",
-                "times": [
-                    {
-                        "days": [
-                            "Tu",
-                            "Th"
-                        ],
-                        "times": [
-                            {
-                                "start": "1500",
-                                "end": "1615"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Joseph Knight Building",
-				"buildingAbbreviation": "JKB",
-				"room": "334"
-            }
-        ]
-    },
-    {
-        "dept": "CS",
-        "number": "450",
-        "name": "Digital Signal Processing",
-        "description": "Processing signals, including images, audio, video, etc.",
-        "hours": "3.0",
-		"sections": [
-            {
-                "professorSurname": "Barrett",
-				"professorGivenName": "William A",
-                "number": "1",
-                "times": [
-                    {
-                        "days": [
-                            "M",
-                            "W",
-							"F"
-                        ],
-                        "times": [
-                            {
-                                "start": "0900",
-                                "end": "0950"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "134"
-            }
-        ]
-    },
-    {
-        "dept": "CS",
-        "number": "124",
-        "name": "Computer Systems",
-        "description": "Introduction to computing from a hardware and software perspective.",
-        "hours": "3.0",
-		"sections": [
-            {
-                "professorSurname": "Roper",
-				"professorGivenName": "Paul Ross",
-                "number": "1",
-                "times": [
-                    {
-                        "days": [
-                            "Tu",
-                            "Th"
-                        ],
-                        "times": [
-                            {
-                                "start": "0930",
-                                "end": "1045"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "1170"
-            },
-			{
-                "professorSurname": "Roper",
-				"professorGivenName": "Paul Ross",
-                "number": "1",
-                "times": [
-                    {
-                        "days": [
-                            "M",
-                            "W",
-							"F"
-                        ],
-                        "times": [
-                            {
-                                "start": "1400",
-                                "end": "1450"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "1170"
-            },
-			{
-                "professorSurname": "Roper",
-				"professorGivenName": "Paul Ross",
-                "number": "1",
-                "times": [
-                    {
-                        "days": [
-                            "M",
-                            "W",
-							"F"
-                        ],
-                        "times": [
-                            {
-                                "start": "1500",
-                                "end": "1550"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "1170"
-            }
-        ]
-    },
-    {
-        "dept": "CS",
-        "number": "142",
-        "name": "Intro to Computer Programming",
-        "description": "Basics of computer programming in C++.",
-        "hours": "3.0",
-        "sections": [
-            {
-                "professorSurname": "Burton",
-				"professorGivenName": "Robert Preece",
-                "number": "6",
-                "times": [
-                    {
-                        "days": [
-                            "M",
-                            "W",
-							"F"
-                        ],
-                        "times": [
-                            {
-                                "start": "0800",
-                                "end": "0850"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "1170"
-            },
-			{
-                "professorSurname": "Burton",
-				"professorGivenName": "Robert Preece",
-                "number": "1",
-                "times": [
-                    {
-                        "days": [
-                            "M",
-                            "W",
-							"F"
-                        ],
-                        "times": [
-                            {
-                                "start": "0900",
-                                "end": "0950"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "1170"
-            },
-			{
-                "professorSurname": "Burton",
-				"professorGivenName": "Robert Preece",
-                "number": "2",
-                "times": [
-                    {
-                        "days": [
-                            "M",
-                            "W",
-							"F"
-                        ],
-                        "times": [
-                            {
-                                "start": "1000",
-                                "end": "1050"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "1170"
-            },
-			{
-                "professorSurname": "Burton",
-				"professorGivenName": "Robert Preece",
-                "number": "3",
-                "times": [
-                    {
-                        "days": [
-                            "M",
-                            "W",
-							"F"
-                        ],
-                        "times": [
-                            {
-                                "start": "1100",
-                                "end": "1150"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "1170"
-            },
-			{
-                "professorSurname": "Farrell",
-				"professorGivenName": "Ryan Matthew",
-                "number": "4",
-                "times": [
-                    {
-                        "days": [
-                            "M",
-                            "W",
-							"F"
-                        ],
-                        "times": [
-                            {
-                                "start": "1300",
-                                "end": "1350"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "1170"
-            },
-			{
-                "professorSurname": "Child",
-				"professorGivenName": "Paul Evan",
-                "number": "1",
-                "times": [
-                    {
-                        "days": [
-                            "T"
-                        ],
-                        "times": [
-                            {
-                                "start": "1715",
-                                "end": "1940"
-                            }
-                        ]
-                    }
-                ],
-				"building": "SALT LAKE",
-				"buildingAbbreviation": "SLC",
-				"room": "413"
-            }
-        ]
-    },
-    {
-        "dept": "CS",
-        "number": "240",
-        "name": "Advanced Programming Concepts",
-        "description": "Advanced topics in computer programming.",
-        "hours": "4.0",
-		"sections": [
-			{
-                "professorSurname": "Woodfield",
-				"professorGivenName": "Scott",
-                "number": "1",
-                "times": [
-                    {
-                        "days": [
-                            "M",
-                            "W",
-							"F"
-                        ],
-                        "times": [
-                            {
-                                "start": "0900",
-                                "end": "0950"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "120"
-            },
-			{
-                "professorSurname": "Woodfield",
-				"professorGivenName": "Scott",
-                "number": "2",
-                "times": [
-                    {
-                        "days": [
-                            "M",
-                            "W",
-							"F"
-                        ],
-                        "times": [
-                            {
-                                "start": "1000",
-                                "end": "1050"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "120"
-            },
-			{
-                "professorSurname": "Rodham",
-				"professorGivenName": "Kenneth",
-                "number": "3",
-                "times": [
-                    {
-                        "days": [
-                            "Tu",
-							"Th"
-                        ],
-                        "times": [
-                            {
-                                "start": "1335",
-                                "end": "1450"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "120"
-            },
-			{
-                "professorSurname": "Rodham",
-				"professorGivenName": "Kenneth",
-                "number": "4",
-                "times": [
-                    {
-                        "days": [
-                            "Tu",
-							"Th"
-                        ],
-                        "times": [
-                            {
-                                "start": "1500",
-                                "end": "1615"
-                            }
-                        ]
-                    }
-                ],
-				"building": "Talmage Building",
-				"buildingAbbreviation": "TMCB",
-				"room": "120"
-            }
-		]
-    },
-    {
-        "dept": "CS",
-        "number": "330",
-        "name": "Concepts of Programming Lang",
-        "description": "Study of programming languages and their features and differences.",
-        "hours": "3.0",
-		"sections": []
-    },
-    {
-        "dept": "Engl",
-        "number": "316",
-        "name": "Technical Communication",
-        "description": "Writing and communication skills relating to technical fields.",
-        "hours": "3.0",
-		"sections": [
-			{
-				"professorSurname": "Pilcher",
-				"professorGivenName": "Toni",
-				"number": "1",
-				"times": [
-					{
-						"days": [
-							"M",
-							"W",
-							"F"
-						],
-						"times": [
-							{
-								"start": "0800",
-								"end": "0850"
-							}
-						]
-					}
-				],
-				"building": "Joseph Knight Building",
-				"buildingAbbreviation": "JKB"
-			}
-		]
-    },
-    {
-        "dept": "Math",
-        "number": "313",
-        "name": "Elementary Linear Algebra",
-        "description": "Basics of linear algebra, including matrices and other crap.",
-        "hours": "3.0"
-    },
-    {
-        "dept": "Math",
-        "number": "112",
-        "name": "Calculus 1",
-        "description": "Calculus basics, including differentiation and its applications.",
-        "hours": "3.0"
-    },
-    {
-        "dept": "Math",
-        "number": "113",
-        "name": "Calculus 2",
-        "description": "More advanced calculus concepts, including integrals and their applications.",
-        "hours": "3.0"
-    },
-    {
-        "dept": "Rel A",
-        "number": "357",
-        "name": "The Pearl of Great Price",
-        "description": "Studies in the books of Moses, Abraham, Joseph Smith - History, and Joseph Smith - Matthew.",
-        "hours": "2.0"
-    },
-    {
-        "dept": "Writing",
-        "number": "150",
-        "name": "Writing & Rhetoric",
-        "description": "Writing and communication skills focusing on rhetorical and persuasive methods.",
-        "hours": "3.0"
-    }
-]
+{
+    "departments": [
+        {
+            "title": "Computer Science",
+            "shortCode": "CS",
+            "courses": [
+                {
+                    "title": "Intro to Computer Programming",
+                    "owningDepartment": "CS",
+                    "courseId": "142",
+                    "description": "An introduction to the basics of computer programming in C++.",
+                    "credits": 3.0,
+                    "sections": [
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "002",
+                            "professor": "Barker, Cory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "121",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "001",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "003",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "004",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "005",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "006",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "007",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "008",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        }
+                    ],
+                    "fulfillments": [],
+                    "prereqs": []
+                },
+                {
+                    "title": "Data Structures & Algorithms",
+                    "owningDepartment": "CS",
+                    "courseId": "235",
+                    "description": "An introduction to fundamental data structures and algorithms.",
+                    "credits": 3.0,
+                    "sections": [
+                        {
+                            "courseId": "CS235",
+                            "sectionId": "002",
+                            "professor": "Barker, Cory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "121",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS235",
+                            "sectionId": "001",
+                            "professor": "Barker, Cory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS235",
+                            "sectionId": "004",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS235",
+                            "sectionId": "005",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS235",
+                            "sectionId": "006",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS235",
+                            "sectionId": "007",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS235",
+                            "sectionId": "008",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        }
+                    ],
+                    "fulfillments": [],
+                    "prereqs": []
+                },
+                {
+                    "title": "Advanced Programming Concepts",
+                    "owningDepartment": "CS",
+                    "courseId": "240",
+                    "description": "Advanced programming concepts implemented in Java, including a several-thousand line project.",
+                    "credits": 3.0,
+                    "sections": [
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "002",
+                            "professor": "Barker, Cory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "121",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "001",
+                            "professor": "Barker, Cory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "004",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "005",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "006",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "007",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "008",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "009",
+                            "professor": "Barker, Cory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "121",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "010",
+                            "professor": "Barker, Cory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "011",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "012",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "013",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "014",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS240",
+                            "sectionId": "015",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        }
+                    ],
+                    "fulfillments": [],
+                    "prereqs": []
+                },
+                {
+                    "title": "Concepts in Programming Lang",
+                    "owningDepartment": "CS",
+                    "courseId": "330",
+                    "description": "An overview of programming languages and their features.",
+                    "credits": 3.0,
+                    "sections": [
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "002",
+                            "professor": "Barker, Cory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "121",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "001",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "003",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "004",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "005",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "006",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "007",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS142",
+                            "sectionId": "008",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        }
+                    ],
+                    "fulfillments": [],
+                    "prereqs": []
+                },
+                {
+                    "title": "Software Design and Testing",
+                    "owningDepartment": "CS",
+                    "courseId": "340",
+                    "description": "Principles of software design, design patterns, design representation, refactoring.",
+                    "credits": 3.0,
+                    "sections": [
+                        {
+                            "courseId": "CS340",
+                            "sectionId": "002",
+                            "professor": "Barker, Cory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "121",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS340",
+                            "sectionId": "001",
+                            "professor": "Barker, Cory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS340",
+                            "sectionId": "004",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS340",
+                            "sectionId": "005",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS340",
+                            "sectionId": "006",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS340",
+                            "sectionId": "007",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "CS340",
+                            "sectionId": "008",
+                            "professor": "Roper, Paul",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        }
+                    ],
+                    "fulfillments": [],
+                    "prereqs": []
+                },
+                {
+                    "title": "Ethics & Computers in Society",
+                    "owningDepartment": "CS",
+                    "courseId": "404",
+                    "description": "Societal impact of computer technology, the computer scientist's place in society, ethical issues.",
+                    "credits": 2.0,
+                    "sections": [
+                        {
+                            "courseId": "CS404",
+                            "sectionId": "001",
+                            "professor": "Knutson, Charles",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "221",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        }
+                    ],
+                    "fulfillments": [],
+                    "prereqs": []
+                }
+            ]
+        },
+        {
+            "title": "English",
+            "shortCode": "ENGL",
+            "courses": [
+                {
+                    "title": "Writing & Rhetoric",
+                    "owningDepartment": "ENGL",
+                    "courseId": "121",
+                    "description": "First-year writing skills in rhetoric.",
+                    "credits": 3.0,
+                    "sections": [
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "002",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "121",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "001",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "004",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "005",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "006",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "007",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "008",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "009",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "121",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "010",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "011",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "012",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "013",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        }
+                    ],
+                    "fulfillments": [],
+                    "prereqs": []
+                },
+                {
+                    "title": "Technical Communication",
+                    "owningDepartment": "ENGL",
+                    "courseId": "316",
+                    "description": "Writing for technical documents, including specification and documentation.",
+                    "credits": 3.0,
+                    "sections": [
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "002",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "121",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "001",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "004",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "005",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "006",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "007",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "008",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "009",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "121",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "010",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "011",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "012",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "013",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "014",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL121",
+                            "sectionId": "015",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        }
+                    ],
+                    "fulfillments": [],
+                    "prereqs": []
+                },
+                {
+                    "title": "Creative Writing",
+                    "owningDepartment": "ENGL",
+                    "courseId": "218R",
+                    "description": "Exercises in creative writing on various subjects.",
+                    "credits": 3.0,
+                    "sections": [
+                        {
+                            "courseId": "ENGL218R",
+                            "sectionId": "002",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "121",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL218R",
+                            "sectionId": "001",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL218R",
+                            "sectionId": "004",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL218R",
+                            "sectionId": "005",
+                            "professor": "Williams, Rory",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL218R",
+                            "sectionId": "010",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL218R",
+                            "sectionId": "011",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL218R",
+                            "sectionId": "012",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL218R",
+                            "sectionId": "013",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL218R",
+                            "sectionId": "014",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "ENGL218R",
+                            "sectionId": "015",
+                            "professor": "Brown, Sharleen",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        }
+                    ],
+                    "fulfillments": [],
+                    "prereqs": []
+                }
+            ]
+        },
+        {
+            "title": "Mathematics",
+            "shortCode": "MATH",
+            "courses": [
+                {
+                    "title": "Calculus I",
+                    "owningDepartment": "MATH",
+                    "courseId": "112",
+                    "description": "An introduction with the basic principles of calculus, including derivatives and their applications.",
+                    "credits": 3.0,
+                    "sections": [
+                        {
+                            "courseId": "MATH112",
+                            "sectionId": "001",
+                            "professor": "Wadley, Harold",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "1:00",
+                                    "endTime": "2:00"
+                                }
+                            ],
+                            "room": "121",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 23,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH112",
+                            "sectionId": "002",
+                            "professor": "Wadley, Harold",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "10:00",
+                                    "endTime": "11:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH112",
+                            "sectionId": "004",
+                            "professor": "Wadley, Harold",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH112",
+                            "sectionId": "005",
+                            "professor": "Wadley, Harold",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH112",
+                            "sectionId": "006",
+                            "professor": "Wadley, Harold",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "3:00",
+                                    "endTime": "4:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH112",
+                            "sectionId": "007",
+                            "professor": "Wadley, Harold",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                },
+                                {
+                                    "day": "FRIDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:00"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH112",
+                            "sectionId": "008",
+                            "professor": "Wadley, Harold",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "4:00",
+                                    "endTime": "5:15"
+                                }
+                            ],
+                            "room": "1024",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        }
+                    ],
+                    "fulfillments": [],
+                    "prereqs": []
+                },
+                {
+                    "title": "Calculus II",
+                    "owningDepartment": "MATH",
+                    "courseId": "113",
+                    "description": "Intermediate to advanced concepts in calculus, including integrals and series.",
+                    "credits": 3,
+                    "sections": [
+                        {
+                            "courseId": "MATH113",
+                            "sectionId": "001",
+                            "professor": "Smith, Lee",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:15"
+                                }
+                            ],
+                            "room": "212",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH113",
+                            "sectionId": "002",
+                            "professor": "Smith, Lee",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:15"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:15"
+                                }
+                            ],
+                            "room": "212",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH113",
+                            "sectionId": "003",
+                            "professor": "Smith, Lee",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "212",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH113",
+                            "sectionId": "004",
+                            "professor": "Smith, Lee",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "9:00",
+                                    "endTime": "10:00"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "9:00",
+                                    "endTime": "10:00"
+                                }
+                            ],
+                            "room": "212",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        }
+                    ],
+                    "fulfillments": [],
+                    "prereqs": []
+                },
+                {
+                    "title": "Elementary Linear Algebra",
+                    "owningDepartment": "MATH",
+                    "courseId": "313",
+                    "description": "Fundamental concepts in linear algebra; emphasis on matrix operations and their applications.",
+                    "credits": 3.0,
+                    "sections": [
+                        {
+                            "courseId": "MATH313",
+                            "sectionId": "001",
+                            "professor": "Smith, Lee",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:15"
+                                }
+                            ],
+                            "room": "341",
+                            "buildingAbbreviation": "JFSB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH313",
+                            "sectionId": "002",
+                            "professor": "Smith, Lee",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:15"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:15"
+                                }
+                            ],
+                            "room": "341",
+                            "buildingAbbreviation": "JFSB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH313",
+                            "sectionId": "003",
+                            "professor": "Smith, Lee",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "11:00",
+                                    "endTime": "12:00"
+                                }
+                            ],
+                            "room": "212",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH313",
+                            "sectionId": "004",
+                            "professor": "Smith, Lee",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "9:00",
+                                    "endTime": "10:00"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "9:00",
+                                    "endTime": "10:00"
+                                }
+                            ],
+                            "room": "212",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH313",
+                            "sectionId": "005",
+                            "professor": "Smith, Lee",
+                            "times": [
+                                {
+                                    "day": "TUESDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:15"
+                                },
+                                {
+                                    "day": "THURSDAY",
+                                    "startTime": "2:00",
+                                    "endTime": "3:15"
+                                }
+                            ],
+                            "room": "212",
+                            "buildingAbbreviation": "JKB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        },
+                        {
+                            "courseId": "MATH313",
+                            "sectionId": "006",
+                            "professor": "Smith, Lee",
+                            "times": [
+                                {
+                                    "day": "MONDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:15"
+                                },
+                                {
+                                    "day": "WEDNESDAY",
+                                    "startTime": "12:00",
+                                    "endTime": "1:15"
+                                }
+                            ],
+                            "room": "212",
+                            "buildingAbbreviation": "TMCB",
+                            "classSize": 30,
+                            "registeredStudents": []
+                        }
+                    ],
+                    "fulfillments": [],
+                    "prereqs": []
+                }
+            ]
+        }
+    ]
+}

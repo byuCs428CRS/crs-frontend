@@ -5,8 +5,7 @@ var classregApp = angular.module('classregApp', []);
 
 classregApp.controller('CourseListCtrl', function($scope, $http) {
 	
-    $http.get('courses/backend-response.json').success(function(data) {
-    	console.log(data);
+    $http.get('courses/courses.json').success(function(data) {
         $scope.departments = data.departments;
 		$scope.courses = []
 		angular.forEach($scope.departments, function(dept) {
@@ -27,6 +26,8 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 					var newSection = {}
 					newSection.sectionId = oldSection.sectionId
 					newSection.professor = oldSection.professor
+					newSection.room = oldSection.room
+					newSection.buildingAbbreviation = oldSection.buildingAbbreviation
 					newSection.classPeriods = []
 					angular.forEach(oldSection.times, function(time) {
 						var timeOfDay = time.startTime + '-' + time.endTime
@@ -42,6 +43,13 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 			});
 		});
     });
+
+	// $http.get('courses/courses.json').success(function(data) {
+	// 	$scope.courses = data;
+	// });
+	// $http.get('courses/departments.json').success(function(data) {
+	// 	$scope.departments = data;
+	// });
 	
     // var crossSiteRequest = createCORSRequest('GET', 'http://localhost:8000/app/courses/backend-response.json')
 	// crossSiteRequest.send()
@@ -55,6 +63,7 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
     $scope.currentSemester = "Summer 2014" //Should do some kind of logic or API call here
     $scope.plannedCourses = [];
     $scope.alerts = [];
+    $scope.saved = false;
     $scope.filterOptions = {
 		levels: {}
 	};
@@ -154,6 +163,7 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 	};
 	
 	$scope.addCourseToPlan = function(course, section) {
+		$scope.saved = false;
 		var fullCourseName = course.dept.shortCode + course.courseId;
 		var cid = fullCourseName + "-" + section.sectionId;
 
@@ -177,13 +187,14 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 	};
 
 	$scope.removeCourseFromPlan = function(course) {
+		$scope.saved = false;
 		var i = $scope.plannedCourses.indexOf(course);
 		if (i > -1)
 			$scope.plannedCourses.splice(i, 1);
 	};
 
 	$scope.savePlan = function() {
-		$scope.addAlert("Your plan was saved!");
+		$scope.saved = true;
 	};
 
 });

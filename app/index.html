@@ -86,7 +86,7 @@
             </div>
             <div class="col-md-4">
                 <div class="well">
-                    <h4 ng-show="!selectedCourse">Select a class to view its details.</h4>
+                    <h4 ng-show="!selectedCourse">Select a class to view its details and add it to your plan.</h4>
                     <div ng-show="selectedCourse">
                         <h3>{{ selectedCourse.dept.shortCode + " " + selectedCourse.courseId}}</h3>
                         <h4>{{ selectedCourse.title }}</h4>
@@ -95,6 +95,7 @@
                         <table class="table table-condensed">
                             <thead>
                                 <tr>
+                                    <th>Section</th>
                                     <th>Instructor</th>
                                     <th>Class Periods</th>
                                     <th>Location</th>
@@ -108,16 +109,17 @@
                             </tbody>
                             <tbody ng-repeat="section in selectedCourse.sections">
                                 <tr>
+                                    <td>{{ section.sectionId }}</td>
                                     <td>{{ section.professor }}</td>
                                     <td>
                                         {{ classPeriodsToString(section.classPeriods) }}
                                     </td>
                                     <td>{{section.room}} {{ section.buildingAbbreviation }}</td>
                                     <td ng-show="!isPlanned(selectedCourse.dept.shortCode + selectedCourse.courseId + '-' + section.sectionId)">
-                                        <a href="#" ng-click="addCourseToPlan(selectedCourse, section)" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></a>
+                                        <a ng-click="addCourseToPlan(selectedCourse, section)" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></a>
                                     </td>
                                     <td ng-show="isPlanned(selectedCourse.dept.shortCode + selectedCourse.courseId + '-' + section.sectionId)">
-                                        <span class="glyphicon glyphicon-ok"></span>
+                                        <span class="glyphicon glyphicon-ok btn-xs"></span>
                                     <td>
                                 </tr>
                             </tbody>
@@ -127,11 +129,12 @@
             </div>
             <div class="col-md-4">
                 <div class="well">
-                    <h3>My Planned Courses</h3>
+                    <h3>My Planned Classes</h3>
                     <h4>{{currentSemester}}</h4>
+                    <p ng-show="!plannedCourses.length">Add some classes to get started planning for next semester!</p>
                     <table class="table table-condensed">
                         <thead>
-                            <tr>
+                            <tr ng-show="plannedCourses.length">
                                 <th>Course</th>
                                 <th>Section</th>
                                 <th>Instructor</th>
@@ -144,12 +147,15 @@
                                     <td>{{ course.sectionId }}</td>
                                     <td>{{ course.instructor }}</td>
                                     <td>{{ classPeriodsToString(course.classPeriods) }}</td>
-                                    <td><a href="#" ng-click="removeCourseFromPlan(course)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-minus"></span></a></td>
+                                    <td><a ng-click="removeCourseFromPlan(course)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-minus"></span></a></td>
                                 </tr>
                             </tbody>
                         </thead>
                     </table>
-                    <a href="#" ng-show="plannedCourses.length" ng-click="savePlan()" class="btn btn-info">Save Plan</a>
+                    <a ng-show="plannedCourses.length" ng-click="savePlan()" class="btn btn-info" ng-class="{ disabled: saved }">
+                        <span ng-show="!saved">Save Plan</span>
+                        <span ng-show="saved">Plan saved! <span class="glyphicon glyphicon-ok"></span></span>
+                    </a>
                 </div>
             </div>
 
