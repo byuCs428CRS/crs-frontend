@@ -6,6 +6,7 @@ var classregApp = angular.module('classregApp', []);
 classregApp.controller('CourseListCtrl', function($scope, $http) {
 	
     $http.get('courses/backend-response.json').success(function(data) {
+    	console.log(data);
         $scope.departments = data.departments;
 		$scope.courses = []
 		angular.forEach($scope.departments, function(dept) {
@@ -52,7 +53,8 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 	// }
     $scope.courseLevels = ['100', '200', '300', '400', '500', '600'];
     $scope.currentSemester = "Summer 2014" //Should do some kind of logic or API call here
-    $scope.plannedCourses = []
+    $scope.plannedCourses = [];
+    $scope.alerts = [];
     $scope.filterOptions = {
 		levels: {}
 	};
@@ -63,6 +65,14 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 	angular.forEach($scope.courseLevels, function(level) {
 		$scope.filterOptions.levels[level] = true;
 	});
+
+	$scope.addAlert = function(message) {
+    	$scope.alerts.push({msg: message});
+  	};
+
+  	$scope.closeAlert = function(index) {
+    	$scope.alerts.splice(index, 1);
+  	};
     
     // Searches both course name and course description fields
     $scope.searchQueryFilter = function(course) {
@@ -132,10 +142,28 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 		}
 		return false;
 	};
+
+	// gets the planned section of a course. if no planned section, returns null.
+	$scope.getPlannedCourse = function(dept, num) {
+		for (var i = 0; i < $scope.plannedCourses.length; i++) {
+			if ($scope.plannedCourses[i].dept.shortCode == dept && $scope.plannedCourses[i].courseId == num) {
+				return $scope.plannedCourses[i];
+			}
+		}
+		return null;
+	};
 	
 	$scope.addCourseToPlan = function(course, section) {
-		// CS236-1
-		var cid = course.dept.shortCode + course.courseId + "-" + section.sectionId;
+		var fullCourseName = course.dept.shortCode + course.courseId;
+		var cid = fullCourseName + "-" + section.sectionId;
+
+		var plannedCourse = $scope.getPlannedCourse(course.dept.shortCode, course.courseId);
+
+		if (plannedCourse) {
+			// if there's already another section of the same course, just replace it
+			$scope.removeCourseFromPlan(plannedCourse);
+		}
+
 		if (!$scope.isPlanned(cid)) {
 			var plannedCourse = new Object();
 			plannedCourse.cid = cid;
@@ -146,6 +174,16 @@ classregApp.controller('CourseListCtrl', function($scope, $http) {
 			plannedCourse.classPeriods = section.classPeriods;
 			$scope.plannedCourses.push(plannedCourse);
 		}
+	};
+
+	$scope.removeCourseFromPlan = function(course) {
+		var i = $scope.plannedCourses.indexOf(course);
+		if (i > -1)
+			$scope.plannedCourses.splice(i, 1);
+	};
+
+	$scope.savePlan = function() {
+		$scope.addAlert("Your plan was saved!");
 	};
 
 });

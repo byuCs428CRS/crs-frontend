@@ -32,6 +32,11 @@
 
     <div class="container main-content">
 
+        <div class="alert alert-info alert-dismissable" ng-repeat="alert in alerts" type="alert.type">
+            <button type="button" ng-click="closeAlert($index)" class="close" data-dismiss="alert" area-hidden="true">&times;</button>
+            {{alert.msg}}
+        </div>
+
         <div class="row">
             <div class="col-md-12">
                 <form class="form-inline" role="form">
@@ -108,7 +113,12 @@
                                         {{ classPeriodsToString(section.classPeriods) }}
                                     </td>
                                     <td>{{section.room}} {{ section.buildingAbbreviation }}</td>
-                                    <td><a href="#" ng-click="addCourseToPlan(selectedCourse, section)" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></a></td>
+                                    <td ng-show="!isPlanned(selectedCourse.dept.shortCode + selectedCourse.courseId + '-' + section.sectionId)">
+                                        <a href="#" ng-click="addCourseToPlan(selectedCourse, section)" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></a>
+                                    </td>
+                                    <td ng-show="isPlanned(selectedCourse.dept.shortCode + selectedCourse.courseId + '-' + section.sectionId)">
+                                        <span class="glyphicon glyphicon-ok"></span>
+                                    <td>
                                 </tr>
                             </tbody>
                         </table>
@@ -126,6 +136,7 @@
                                 <th>Section</th>
                                 <th>Instructor</th>
                                 <th>Class Periods</th>
+                                <th></th>
                             </tr>
                             <tbody ng-repeat="course in plannedCourses">
                                 <tr>
@@ -133,10 +144,12 @@
                                     <td>{{ course.sectionId }}</td>
                                     <td>{{ course.instructor }}</td>
                                     <td>{{ classPeriodsToString(course.classPeriods) }}</td>
+                                    <td><a href="#" ng-click="removeCourseFromPlan(course)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-minus"></span></a></td>
                                 </tr>
                             </tbody>
                         </thead>
                     </table>
+                    <a href="#" ng-show="plannedCourses.length" ng-click="savePlan()" class="btn btn-info">Save Plan</a>
                 </div>
             </div>
 
