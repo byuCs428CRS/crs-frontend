@@ -198,6 +198,12 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 				plannedCourse.classPeriods = section.classPeriods;
 				$scope.plannedCourses.push(plannedCourse);
 			}
+
+			var elId = '#plannedCourse-' + ($scope.plannedCourses.length - 1).toString();
+			
+			setTimeout(function() {
+				$(elId).effect("highlight", {}, 3000);
+			}, 100);
 		};
 
 		$scope.removeCourseFromPlan = function(course) {

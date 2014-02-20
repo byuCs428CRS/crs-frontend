@@ -125,7 +125,7 @@
                                 <th></th>
                             </tr>
                             <tbody ng-repeat="course in plannedCourses">
-                                <tr>
+                                <tr id="plannedCourse-{{$index}}">
                                     <td>{{ course.dept.shortCode }} {{ course.courseId }}</td>
                                     <td>{{ course.sectionId }}</td>
                                     <td>{{ course.instructor }}</td>
