@@ -202,7 +202,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 			var elId = '#plannedCourse-' + ($scope.plannedCourses.length - 1).toString();
 			
 			setTimeout(function() {
-				$(elId).effect("highlight", {}, 3000);
+				$(elId).effect("highlight", {}, 1000);
 			}, 100);
 		};
 
