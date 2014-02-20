@@ -14,7 +14,8 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 	function($scope, $http) {
 	
 	    $http.get('courses/courses.json').success(function(data) {
-	        $scope.departments = data.departments;
+	    	$scope.departments = data.departments;
+
 			$scope.courses = []
 			angular.forEach($scope.departments, function(dept) {
 				angular.forEach(dept.courses, function(course) {

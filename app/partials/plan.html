@@ -21,7 +21,7 @@
                         <div class="col-md-4">
                             <select id="filterByDepartment" class="form-control" ng-model="filteredDept" ng-change="filterOptions.searchQuery = ''">
                                 <option value="">All departments</option>
-                                <option ng-repeat="dept in departments" value="{{dept.shortCode}}">{{dept.title}}</option>
+                                <option ng-repeat="dept in departments | orderBy:'title'" value="{{dept.shortCode}}">{{dept.title}}</option>
                             </select>
                         </div>
                         <div class="col-md-8">
