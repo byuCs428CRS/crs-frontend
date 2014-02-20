@@ -48,3 +48,12 @@ body {
 #coursesTable table {
 	margin-bottom: 0;
 }
+
+.center {
+	text-align: center;
+}
+
+#courseLevelFilter {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
