@@ -5,7 +5,7 @@
     <script src="js/register.js"></script>
 </head>
 <body>
-    <form id="form" onsubmit="javascript:addClass()">
+    <form id="visible" onsubmit="return false;" onclick="addClass()">
         New year term: <input id="new_year_term" value="20143"><br>
         Course id: <input id="curr_id" value="10178"><br>
         New title code: <input id="new_title_code" value="000"><br>
@@ -15,8 +15,17 @@
         Section num: <input id="section_num" value="001"><br>
         <input type="submit" value="Add Class">
     </form>
-    <div id="response-div">
-        Response div
-    </div>
+    <iframe name="response" width="900" height="600">
+        <html>
+            <body>
+            Response here
+            </body>
+        </html>
+    </iframe>
+    <form method="post" id="invisible" action="https://gamma.byu.edu/ry/ae/prod/registration/cgi/regOfferings.cgi" target="response">
+        <input id="c" name="c" value="regOfferings">
+        <input id="e" name="e" value="@AddClass">
+        <input id="brownie" name="brownie">
+    </form>
 </body>
 </html>
