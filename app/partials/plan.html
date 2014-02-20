@@ -69,7 +69,9 @@
                 <div class="well">
                     <h4 ng-show="!selectedCourse">Select a course to start planning.</h4>
                     <div ng-show="selectedCourse">
-                        <h3>{{ selectedCourse.dept.shortCode + " " + selectedCourse.courseId}}</h3>
+                        <h3><span class="glyphicon glyphicon-list-alt"></span>
+                            {{ selectedCourse.dept.shortCode + " " + selectedCourse.courseId}}
+                        </h3>
                         <h4>{{ selectedCourse.title }}</h4>
                         <p>{{ selectedCourse.description }}</p>
                         <p>Credit hours: {{ selectedCourse.credits }}</p>
@@ -133,6 +135,9 @@
                             </tbody>
                         </thead>
                     </table>
+                    <button ng-show="plannedCourses.length" ng-click="viewWeekLayout()" class="btn btn-info" data-toggle="modal" data-target="#weekLayoutModal">
+                        <span><span class="glyphicon glyphicon-calendar"></span>  View Week Layout</span>
+                    </button>
                     <a ng-show="plannedCourses.length" ng-click="savePlan()" class="btn btn-info" ng-class="{ disabled: saved }">
                         <span ng-show="!saved"><span class="glyphicon glyphicon-floppy-save"></span>  Save Plan</span>
                         <span ng-show="saved"><span class="glyphicon glyphicon-floppy-saved"></span>  Plan saved!</span>
@@ -143,3 +148,87 @@
         </div>
 
     </div>
+
+    <div class="modal fade" id="weekLayoutModal">
+      <div class="modal-dialog" style="width:1000px;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Weekly Schedule</h4>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+                <thead>
+                    <th></th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>7</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                <tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
