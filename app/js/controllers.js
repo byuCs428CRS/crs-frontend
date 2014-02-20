@@ -76,7 +76,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 	    $scope.filterOptions = {
 			levels: {}
 		};
-		$scope.sortBy = 'dept';
+		$scope.sortBy = 'dept.title';
 		$scope.filteredDept = ''
 		$scope.selectedCourse = undefined
 		
