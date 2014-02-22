@@ -38,6 +38,9 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 						newSection.room = oldSection.room
 						newSection.buildingAbbreviation = oldSection.buildingAbbreviation
 						newSection.classPeriods = []
+						newSection.classSize = oldSection.classSize
+						newSection.waitlistCount = oldSection.waitlistCount
+						newSection.registeredStudents = oldSection.registeredStudents
 						angular.forEach(oldSection.times, function(time) {
 							var timeOfDay = time.startTime + '-' + time.endTime
 							if( timeOfDay in newSection.classPeriods )

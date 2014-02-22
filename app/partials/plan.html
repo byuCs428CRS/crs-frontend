@@ -80,6 +80,9 @@
                                     <th>Instructor</th>
                                     <th>Class Periods</th>
                                     <th>Location</th>
+                                    <th>Seats</th>
+                                    <th>Avail</th>
+                                    <th>WL</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -96,6 +99,9 @@
                                         {{ classPeriodsToString(section.classPeriods) }}
                                     </td>
                                     <td>{{section.room}} {{ section.buildingAbbreviation }}</td>
+                                    <td>{{section.classSize}}</td>
+                                    <td>{{section.classSize - section.registeredStudents.length}}</td>
+                                    <td>{{section.waitlistCount}}</td>
                                     <td ng-show="!isPlanned(selectedCourse.dept.shortCode + selectedCourse.courseId + '-' + section.sectionId)">
                                         <a ng-click="addCourseToPlan(selectedCourse, section)" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></a>
                                     </td>
