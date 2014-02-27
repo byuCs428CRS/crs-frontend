@@ -74,26 +74,19 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 	    $scope.courseLevels = ['100', '200', '300', '400', '500', '600'];
 	    $scope.currentSemester = "Summer 2014" //Should do some kind of logic or API call here
 	    $scope.plannedCourses = [];
-	    $scope.alerts = [];
+        $scope.signinAlerts = [];
 	    $scope.saved = false;
 	    $scope.filterOptions = {
 			levels: {}
 		};
 		$scope.sortBy = 'dept.title';
-		$scope.filteredDept = ''
-		$scope.selectedCourse = undefined
+		$scope.filteredDept = '';
+		$scope.selectedCourse = undefined;
+        $scope.signinTab = true;
 		
 		angular.forEach($scope.courseLevels, function(level) {
 			$scope.filterOptions.levels[level] = true;
 		});
-
-		$scope.addAlert = function(message) {
-	    	$scope.alerts.push({msg: message});
-	  	};
-
-	  	$scope.closeAlert = function(index) {
-	    	$scope.alerts.splice(index, 1);
-	  	};
 	    
 	    // Searches both course name and course description fields
 	    $scope.searchQueryFilter = function(course) {
@@ -219,5 +212,33 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 		$scope.savePlan = function() {
 			$scope.saved = true;
 		};
+
+		$scope.addAlert = function(message) {
+	    	$scope.signinAlerts.push({msg: message});
+	  	};
+
+	  	$scope.closeAlert = function(index) {
+	    	$scope.signinAlerts.splice(index, 1);
+	  	};
+
+        $scope.signInUser = function() {
+            $scope.signinAlerts.length = 0;
+            if (!($scope.loginUsername && $scope.loginUsername.length && $scope.loginPassword && $scope.loginPassword.length)) {
+                $scope.addAlert("All fields are required.");
+            }
+        };
+
+        $scope.createUserAccount = function() {
+            $scope.signinAlerts.length = 0;
+            if (!($scope.createUsername && $scope.createUsername.length && $scope.createPassword && $scope.createPassword.length && $scope.createPassword2 && $scope.createPassword2.length)) {
+                $scope.addAlert("All fields are required.");
+            }
+            if (!/^[a-z0-9_\-@]+$/i.test($scope.createUsername)) {
+                $scope.addAlert("Username cannot contain special characters other than -, _, and @.");
+            }
+            if ($scope.createPassword != $scope.createPassword2) {
+                $scope.addAlert("Passwords do not match.");
+            }
+        };
 
 }]);

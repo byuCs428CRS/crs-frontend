@@ -1,6 +1,6 @@
 var auth = {
 	function login(username, password) {
-		
+
 	}
 	
 	/**
