@@ -16,33 +16,33 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 	    $http.get('courses/courses.json').success(function(data) {
 	    	$scope.departments = data.departments;
 
-			$scope.courses = []
+			$scope.courses = [];
 			angular.forEach($scope.departments, function(dept) {
 				angular.forEach(dept.courses, function(course) {
-					var newCourse = {}
-					newCourse.title = course.title
-					newCourse.owningDepartment = course.owningDepartment
-					newCourse.courseId = course.courseId
-					newCourse.description = course.description
-					newCourse.credits = course.credits
-					newCourse.fulfillments = course.fulfillments
-					newCourse.prereqs = course.prereqs
-					newCourse.dept = {}
-					newCourse.dept.title = dept.title
-					newCourse.dept.shortCode = dept.shortCode
-					newCourse.sections = []
+					var newCourse = {};
+					newCourse.title = course.title;
+					newCourse.owningDepartment = course.owningDepartment;
+					newCourse.courseId = course.courseId;
+					newCourse.description = course.description;
+					newCourse.credits = course.credits;
+					newCourse.fulfillments = course.fulfillments;
+					newCourse.prereqs = course.prereqs;
+					newCourse.dept = {};
+					newCourse.dept.title = dept.title;
+					newCourse.dept.shortCode = dept.shortCode;
+					newCourse.sections = [];
 					angular.forEach(course.sections, function(oldSection) {
 						var newSection = {}
-						newSection.sectionId = oldSection.sectionId
-						newSection.professor = oldSection.professor
-						newSection.room = oldSection.room
-						newSection.buildingAbbreviation = oldSection.buildingAbbreviation
-						newSection.classPeriods = []
-						newSection.classSize = oldSection.classSize
-						newSection.waitlistCount = oldSection.waitlistCount
-						newSection.registeredStudents = oldSection.registeredStudents
+						newSection.sectionId = oldSection.sectionId;
+						newSection.professor = oldSection.professor;
+						newSection.room = oldSection.room;
+						newSection.buildingAbbreviation = oldSection.buildingAbbreviation;
+						newSection.classPeriods = [];
+						newSection.classSize = oldSection.classSize;
+						newSection.waitlistCount = oldSection.waitlistCount;
+						newSection.registeredStudents = oldSection.registeredStudents;
 						angular.forEach(oldSection.times, function(time) {
-							var timeOfDay = time.startTime + '-' + time.endTime
+							var timeOfDay = time.startTime + '-' + time.endTime;
 							if( timeOfDay in newSection.classPeriods )
 								newSection.classPeriods[timeOfDay] += ", " + $scope.abbreviateDay(time.day)
 							else
@@ -71,23 +71,38 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 		// crossSiteRequest.onerror = function() {
 			// console.log("there was an error")
 		// }
-	    $scope.courseLevels = ['100', '200', '300', '400', '500', '600'];
-	    $scope.currentSemester = "Summer 2014" //Should do some kind of logic or API call here
-	    $scope.plannedCourses = [];
-        $scope.signinAlerts = [];
-	    $scope.saved = false;
-	    $scope.filterOptions = {
-			levels: {}
-		};
-		$scope.sortBy = 'dept.title';
-		$scope.filteredDept = '';
-		$scope.selectedCourse = undefined;
-        $scope.signinTab = true;
-		
-		angular.forEach($scope.courseLevels, function(level) {
-			$scope.filterOptions.levels[level] = true;
-		});
-	    
+
+
+        $scope.initStuff = function() {
+            $scope.loggedIn = false;
+            // TODO: check the server for a session, set loggedIn to true and populate session data
+            $scope.courseLevels = ['100', '200', '300', '400', '500', '600'];
+            $scope.currentSemester = "Summer 2014" //Should do some kind of logic or API call here
+            $scope.plannedCourses = [];
+            $scope.signinAlerts = [];
+            $scope.saved = false;
+            $scope.filterOptions = {
+                levels: {}
+            };
+            $scope.sortBy = 'dept.title';
+            $scope.filteredDept = '';
+            $scope.selectedCourse = undefined;
+            $scope.signinTab = true;
+            $scope.createTab = false;
+
+            angular.forEach($scope.courseLevels, function(level) {
+                $scope.filterOptions.levels[level] = true;
+            });
+
+            $scope.loginUsername = '';
+            $scope.loginPassword = '';
+            $scope.createUsername = '';
+            $scope.createPassword = '';
+            $scope.createPassword2 = '';
+        };
+
+        $scope.initStuff();
+
 	    // Searches both course name and course description fields
 	    $scope.searchQueryFilter = function(course) {
 			var q = angular.lowercase($scope.filterOptions.searchQuery);
@@ -126,28 +141,28 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 		$scope.abbreviateDay = function(day) {
 			switch( day ) {
 				case 'MONDAY':
-					return 'M'
+					return 'M';
 				case 'TUESDAY':
-					return 'Tu'
+					return 'Tu';
 				case 'WEDNESDAY':
-					return 'W'
+					return 'W';
 				case 'THURSDAY':
-					return 'Th'
+					return 'Th';
 				case 'FRIDAY':
-					return 'F'
+					return 'F';
 				case 'SATURDAY':
-					return 'Sa'
+					return 'Sa';
 				case 'SUNDAY':
 					return 'Su'
 			}
 		}
 		
 		$scope.classPeriodsToString = function(classPeriods) {
-			var prefix = ''
-			var result = ''
-			for( var key in classPeriods ) {
-				result += prefix + classPeriods[key] + ' ' + key
-				prefix = "\n" //\n probably doesn't work, but angular doesn't allow </br>
+			var prefix = '';
+			var result = '';
+			for(var key in classPeriods) {
+				result += prefix + classPeriods[key] + ' ' + key;
+				prefix = "\n"; //\n probably doesn't work, but angular doesn't allow </br>
 			}
 			return result
 		};
@@ -210,8 +225,17 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 		};
 
 		$scope.savePlan = function() {
-			$scope.saved = true;
+            if (!$scope.loggedIn) {
+                $('#loginModal').modal('show');
+            } else {
+                //TODO: save the plan to the database under the current session
+			    $scope._savePlan();
+            }
 		};
+
+        $scope._savePlan = function() {
+            $scope.saved = true;
+        };
 
 		$scope.addAlert = function(message) {
 	    	$scope.signinAlerts.push({msg: message});
@@ -225,19 +249,31 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
             $scope.signinAlerts.length = 0;
             if (!($scope.loginUsername && $scope.loginUsername.length && $scope.loginPassword && $scope.loginPassword.length)) {
                 $scope.addAlert("All fields are required.");
+            } else {
+                $scope.loggedIn = true;
+                $scope.username = $scope.loginUsername;
+                $('#loginModal').modal('hide');
+                $scope._savePlan();
             }
+        };
+
+        $scope.signOutUser = function() {
+            $scope.initStuff();
+            $scope.loggedIn = false;
         };
 
         $scope.createUserAccount = function() {
             $scope.signinAlerts.length = 0;
             if (!($scope.createUsername && $scope.createUsername.length && $scope.createPassword && $scope.createPassword.length && $scope.createPassword2 && $scope.createPassword2.length)) {
                 $scope.addAlert("All fields are required.");
-            }
-            if (!/^[a-z0-9_\-@]+$/i.test($scope.createUsername)) {
+            } else if (!/^[a-z0-9_\-@]+$/i.test($scope.createUsername)) {
                 $scope.addAlert("Username cannot contain special characters other than -, _, and @.");
-            }
-            if ($scope.createPassword != $scope.createPassword2) {
+            } else if ($scope.createPassword != $scope.createPassword2) {
                 $scope.addAlert("Passwords do not match.");
+            } else {
+                $scope.loggedIn = true;
+                $scope.username = $scope.createUsername;
+                $('#loginModal').modal('hide');
             }
         };
 
