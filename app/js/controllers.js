@@ -52,27 +52,13 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 				});
 			});
     	});
-
-		// $http.get('courses/courses.json').success(function(data) {
-		// 	$scope.courses = data;
-		// });
-		// $http.get('courses/departments.json').success(function(data) {
-		// 	$scope.departments = data;
-		// });
 		
-	    // var crossSiteRequest = createCORSRequest('GET', 'http://localhost:8000/app/courses/backend-response.json')
-		// crossSiteRequest.send()
-		// crossSiteRequest.onload = function() {
-			// $scope.departments = jQuery.parseJSON(crossSiteRequest.responseText).departments
-		// }
-		// crossSiteRequest.onerror = function() {
-			// console.log("there was an error")
-		// }
 	    $scope.courseLevels = ['100', '200', '300', '400', '500', '600'];
 	    $scope.currentSemester = "Summer 2014" //Should do some kind of logic or API call here
 	    $scope.plannedCourses = [];
 	    $scope.alerts = [];
 	    $scope.saved = false;
+		$scope.added = false
 	    $scope.filterOptions = {
 			levels: {}
 		};

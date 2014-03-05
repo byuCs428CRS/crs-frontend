@@ -140,6 +140,10 @@
                         <span ng-show="!saved"><span class="glyphicon glyphicon-floppy-save"></span>  Save Plan</span>
                         <span ng-show="saved"><span class="glyphicon glyphicon-floppy-saved"></span>  Plan saved!</span>
                     </a>
+					<a ng-show="plannedCourses.length" ng-click="registerCourses()" class="btn btn-info" ng-class="{ disabled: saved }">
+                        <span ng-show="!added"><span class="glyphicon glyphicon-floppy-save"></span>  Save Plan</span>
+                        <span ng-show="added"><span class="glyphicon glyphicon-floppy-saved"></span>  Plan saved!</span>
+                    </a>
                 </div>
             </div>
 

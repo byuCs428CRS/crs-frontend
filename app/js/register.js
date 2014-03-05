@@ -9,6 +9,9 @@ function addClass() {
         brownie += prefix + el.id + "=" + el.value
         prefix = "&"
     }
+	brownie += "&captcha_challenge=" +document.getElementById("recaptcha_challenge_field").value
+	brownie += "&captcha_value=" + document.getElementById("recaptcha_response_field").value
+	
     console.log("brownie = "+brownie)
     document.getElementById("brownie").value = brownie
     document.getElementById("invisible").submit()
