@@ -269,6 +269,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
         };
 
         $scope.createUserAccount = function() {
+            console.log("creating user account");
             $scope.signinAlerts.length = 0;
             if (!($scope.createUsername && $scope.createUsername.length && $scope.createPassword && $scope.createPassword.length && $scope.createPassword2 && $scope.createPassword2.length)) {
                 $scope.addAlert("All fields are required.");
@@ -277,19 +278,15 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             } else if ($scope.createPassword != $scope.createPassword2) {
                 $scope.addAlert("Passwords do not match.");
             } else {
-                $scope.loggedIn = true;
-                $scope.username = $scope.createUsername;
-                $('#loginModal').modal('hide');
+                $scope.registerUser($scope.createUsername, $scope.createPassword);
             }
         };
 
         $scope.registerUser = function(username, password) {
 
             $http.get('http://andyetitcompiles.com/auth/login').success(function(data) {
-                console.log(data);
                 data['username'] = username;
                 var hashedPw = doHash(password, data['pepper']);
-                console.log(hashedPw);
                 data['pass'] = hashedPw;
                 $http.post('http://andyetitcompiles.com/auth/login', data)
                     .success(function(data) {
@@ -303,7 +300,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             $scope.username = username;
             $('#loginModal').modal('hide');
         };
-    }]);
+
         $scope.registerClasses = function() {
             $cookies.c = "regOfferings"
             var classes = []
@@ -326,6 +323,5 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             $("#registration-iframe").attr("src", url + query)
             $("#registration-iframe").css("display", "inline")
             $scope.plannedCourses = []
-        }
-
-}]);
+        };
+    }]);

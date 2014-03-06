@@ -1,47 +1,54 @@
 
-    <div class="container main-content">
+<div class="container main-content">
 
-        <div class="alert alert-info alert-dismissable" ng-repeat="alert in alerts" type="alert.type">
-            <button type="button" ng-click="closeAlert($index)" class="close" data-dismiss="alert" area-hidden="true">&times;</button>
-            {{alert.msg}}
-        </div>
+    <div class="row" style="margin-bottom:5px;">
+        <div class="col-md-12">
+            <div class="pull-right">
 
-        <div class="row">
-            <div class="col-md-12">
-                <a class="pull-right" href="index.html#/about">
+                <button ng-show="!loggedIn" class="btn btn-xs btn-default" data-target="#loginModal" data-toggle="modal">
+                    <span class="glyphicon glyphicon-user"></span> Sign in
+                </button>
+                <span ng-show="loggedIn"><span class="glyphicon glyphicon-user"></span> Welcome, {{username}}!&nbsp;&nbsp;&nbsp;</span>
+
+                <button ng-show="loggedIn" class="btn btn-xs btn-default" ng-click="signOutUser()">
+                    Sign out
+                </button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-xs btn-default" data-target="#aboutUsModal" data-toggle="modal">
                     <span class="glyphicon glyphicon-question-sign"></span> What's this?
-                </a>
+                </button>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-3">
-                <div class="row">
-                    <form class="form-inline" role="form">
-                        <div class="col-md-4">
-                            <select id="filterByDepartment" class="form-control" ng-model="filteredDept" ng-change="filterOptions.searchQuery = ''">
-                                <option value="">All</option>
-                                <option ng-repeat="dept in departments | orderBy:'shortCode'" value="{{dept.shortCode}}">{{dept.shortCode}}</option>
-                            </select>
-                        </div>
-                        <div class="col-md-8">
-                            <input id="filterByDescriptionQuery" class="form-control" ng-model="filterOptions.searchQuery" placeholder="Search">
-                        </div>
-                    </form>
-                </div>
-                <!-- example of a course level filter, it's not very good though -->
-                <!-- <div class="row" id="courseLevelFilter">
-                    <form class="form-inline" role="form">
-                        <div class="col-md-12">
-                            <small>Course Levels:&nbsp;&nbsp;</small>
-                            <span ng-repeat="level in courseLevels">
-                                <label class="checkbox checkbox-inline" for="{{level}}">
-                                    <input type="checkbox" ng-model="filterOptions.levels[level]" name="group" id="{{level}}"> {{ level }}
-                                </label>
-                            </span>
-                        </div>
-                    </form>
-                </div> -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="row">
+                <form class="form-inline" role="form">
+                    <div class="col-md-4">
+                        <select id="filterByDepartment" class="form-control" ng-model="filteredDept" ng-change="filterOptions.searchQuery = ''">
+                            <option value="">All</option>
+                            <option ng-repeat="dept in departments | orderBy:'shortCode'" value="{{dept.shortCode}}">{{dept.shortCode}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <input id="filterByDescriptionQuery" class="form-control" ng-model="filterOptions.searchQuery" placeholder="Search">
+                    </div>
+                </form>
+            </div>
+            <!-- example of a course level filter, it's not very good though -->
+            <!-- <div class="row" id="courseLevelFilter">
+                <form class="form-inline" role="form">
+                    <div class="col-md-12">
+                        <small>Course Levels:&nbsp;&nbsp;</small>
+                        <span ng-repeat="level in courseLevels">
+                            <label class="checkbox checkbox-inline" for="{{level}}">
+                                <input type="checkbox" ng-model="filterOptions.levels[level]" name="group" id="{{level}}"> {{ level }}
+                            </label>
+                        </span>
+                    </div>
+                </form>
+            </div> -->
 
                 <br>
 
@@ -80,6 +87,9 @@
                                     <th>Instructor</th>
                                     <th>Class Periods</th>
                                     <th>Location</th>
+                            <th>Seats</th>
+                            <th>Avail</th>
+                            <th>WL</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -96,6 +106,9 @@
                                         {{ classPeriodsToString(section.classPeriods) }}
                                     </td>
                                     <td>{{section.room}} {{ section.buildingAbbreviation }}</td>
+                            <td>{{section.classSize}}</td>
+                            <td>{{section.classSize - section.registeredStudents.length}}</td>
+                            <td>{{section.waitlistCount}}</td>
                                     <td ng-show="!isPlanned(selectedCourse.dept.shortCode + selectedCourse.courseId + '-' + section.sectionId)">
                                         <a ng-click="addCourseToPlan(selectedCourse, section)" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-plus"></span></a>
                                     </td>
@@ -145,7 +158,15 @@
                         <span ng-show="added"><span class="glyphicon glyphicon-floppy-saved"></span>  Courses Registered!</span>
                     </a>
                 </div>
+
+            <div class="well">
+                <h3>Week View</h3>
+                <br>
+                <button ng-click="viewWeekLayout()" class="btn btn-primary" data-toggle="modal" data-target="#weekLayoutModal">
+                    <span><span class="glyphicon glyphicon-calendar"></span>  View Details</span>
+                </button>
             </div>
+        </div>
 
         </div>
 
@@ -156,86 +177,110 @@
 
     </div>
 
-    <div class="modal fade" id="weekLayoutModal">
-      <div class="modal-dialog" style="width:1000px;">
+
+<div class="modal fade" id="weekLayoutModal">
+    <div class="modal-dialog" style="width:1000px;">
         <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">Weekly Schedule</h4>
-          </div>
-          <div class="modal-body">
-            <table class="table">
-                <thead>
-                    <th></th>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>7</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>12</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td></td><td></td><td></td><td></td><td></td>
-                    </tr>
-                <tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Weekly Schedule</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
         </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal fade" id="aboutUsModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">About this page</h4>
+            </div>
+            <div class="modal-body">
+                <p>This is a tool to more easily and efficiently plan your class schedule. Use our fluid and fast interface to the class catalog, with flexible filtering, sorting, and intuitive planning.</p>
+                <p>Simply add courses to your plan until you're satisfied, then we'll save it for you.</p>
+                <p>On your registration date, return here and sign in, and you'll be able to add your entire courseload with the click of a single button. (Note: You'll need to be logged into your BYU account in a separate tab of your browser in order for registration to work.)</p>
+                <p>We hope this helps you get into all your classes without scrambling through the catalog last-minute.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="loginModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Sign in or create a new account to save your plan.</h3>
+            </div>
+
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                <ul class="nav nav-tabs" id="tabContent">
+                    <li ng-class="{active: signinTab}" ng-click="signinTab = true; createTab = false; signinAlerts.length = 0;">
+                        <a>Sign in</a>
+                    </li>
+                    <li ng-class="{active: createTab}" ng-click="signinTab = false; createTab = true; signinAlerts.length = 0;">
+                        <a>Create account</a>
+                    </li>
+                </ul>
+                <br>
+                <div class="tab-content">
+
+                    <!-- alerts for invalid form entry-->
+                    <div class="alert alert-info alert-dismissable" ng-repeat="alert in signinAlerts" type="alert.type">
+                        <button type="button" ng-click="closeAlert($index)" class="close" data-dismiss="alert" area-hidden="true">&times;</button>
+                        {{alert.msg}}
+                    </div>
+
+                    <div ng-class="{active: signinTab}" class="tab-pane" id="signin">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="loginUsername">Username</label>
+                                <input ng-model="loginUsername" type="text" maxlength="20" class="form-control" id="loginUsername" placeholder="Enter username">
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input ng-model="loginPassword" type="password" maxlength="35" class="form-control" id="loginPassword" placeholder="Password">
+                            </div>
+                            <hr>
+                            <button type="submit" ng-click="signInUser()" class="btn btn-primary">Sign in</button>
+                            <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </form>
+                    </div>
+                    <div ng-class="{active: createTab}" class="tab-pane" id="createaccount">
+
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="createUsername">Username</label>
+                                <input ng-model="createUsername" type="text" maxlength="20" class="form-control" id="createUsername" placeholder="Create a username">
+                            </div>
+                            <div class="form-group">
+                                <label for="createPassword">Password</label>
+                                <input ng-model="createPassword" type="password" maxlength="35" class="form-control" id="createPassword" placeholder="Create a password">
+                            </div>
+                            <div class="form-group">
+                                <label for="createPassword2">Confirm Password</label>
+                                <input ng-model="createPassword2" type="password" maxlength="35" class="form-control" id="createPassword2" placeholder="Confirm password">
+                            </div>
+                            <hr>
+                            <button type="submit" ng-click="createUserAccount()" class="btn btn-primary">Create Account</button>
+                            <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
