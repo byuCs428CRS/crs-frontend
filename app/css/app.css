@@ -57,3 +57,11 @@ body {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+
+#registration-iframe {
+    position: absolute;
+    margin-left: -255px;
+    top: 100px;
+    left: 50%;
+    z-index: 2147483647;
+}

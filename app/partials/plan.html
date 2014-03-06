@@ -140,14 +140,19 @@
                         <span ng-show="!saved"><span class="glyphicon glyphicon-floppy-save"></span>  Save Plan</span>
                         <span ng-show="saved"><span class="glyphicon glyphicon-floppy-saved"></span>  Plan saved!</span>
                     </a>
-					<a ng-show="plannedCourses.length" ng-click="registerCourses()" class="btn btn-info" ng-class="{ disabled: saved }">
-                        <span ng-show="!added"><span class="glyphicon glyphicon-floppy-save"></span>  Save Plan</span>
-                        <span ng-show="added"><span class="glyphicon glyphicon-floppy-saved"></span>  Plan saved!</span>
+					<a ng-show="plannedCourses.length" ng-click="registerClasses()" class="btn btn-info" ng-class="{ disabled: saved }">
+                        <span ng-show="!added"><span class="glyphicon glyphicon-floppy-save"></span>  Register</span>
+                        <span ng-show="added"><span class="glyphicon glyphicon-floppy-saved"></span>  Courses Registered!</span>
                     </a>
                 </div>
             </div>
 
         </div>
+
+        <iframe id="registration-iframe"  width="510" height="500" style="display: none"></iframe><br>
+        <button onclick="loadRegistrationPage()">Load Registration Page</button>
+        <button onclick="clearCaptchaCookies()">Clear Captcha Cookies</button>
+        <button onclick="hideIframe()">Hide Iframe</button>
 
     </div>
 

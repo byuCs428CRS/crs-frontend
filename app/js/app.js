@@ -3,9 +3,10 @@
 /* App Module */
 var classregApp = angular.module('classregApp', [
   'ngRoute',
-  'classregControllers'
+  'classregControllers',
+  'ngCookies'
 ]);
- 
+
 classregApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.

@@ -7,14 +7,16 @@
                 {
                     "title": "Intro to Computer Programming",
                     "owningDepartment": "CS",
+                    "byuId": "01489",
                     "courseId": "142",
                     "description": "An introduction to the basics of computer programming in C++.",
                     "credits": 3.0,
+                    "titleCode": "002",
                     "sections": [
                         {
                             "courseId": "CS142",
-                            "sectionId": "002",
-                            "professor": "Barker, Cory",
+                            "sectionId": "001",
+                            "professor": "Cook, Kevin",
                             "times": [
                                 {
                                     "day": "MONDAY",
@@ -30,7 +32,8 @@
                             "room": "121",
                             "buildingAbbreviation": "TMCB",
                             "classSize": 23,
-                            "registeredStudents": []
+                            "registeredStudents": [],
+                            "sectionType": "DAY"
                         },
                         {
                             "courseId": "CS142",

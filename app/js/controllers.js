@@ -10,9 +10,9 @@ classregControllers.controller('HeaderController', ['$scope', '$location',
     };
 }]);
 
-classregControllers.controller('CourseListCtrl', ['$scope', '$http',
-	function($scope, $http) {
-	
+classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
+	function($scope, $http, $cookies) {
+
 	    $http.get('courses/courses.json').success(function(data) {
 	    	$scope.departments = data.departments;
 
@@ -30,6 +30,8 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 					newCourse.dept = {};
 					newCourse.dept.title = dept.title;
 					newCourse.dept.shortCode = dept.shortCode;
+                    newCourse.titleCode = course.titleCode;
+                    newCourse.byuId = course.byuId
 					newCourse.sections = [];
 					angular.forEach(course.sections, function(oldSection) {
 						var newSection = {}
@@ -41,6 +43,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 						newSection.classSize = oldSection.classSize;
 						newSection.waitlistCount = oldSection.waitlistCount;
 						newSection.registeredStudents = oldSection.registeredStudents;
+                        newSection.sectionType = oldSection.sectionType
 						angular.forEach(oldSection.times, function(time) {
 							var timeOfDay = time.startTime + '-' + time.endTime;
 							if( timeOfDay in newSection.classPeriods )
@@ -50,7 +53,6 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 						});
 						newCourse.sections.push(newSection)
 					});
-					// console.log(newCourse)
 					$scope.courses.push(newCourse)
 				});
 			});
@@ -207,6 +209,10 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 				plannedCourse.sectionId = section.sectionId;
 				plannedCourse.instructor = section.professor;
 				plannedCourse.classPeriods = section.classPeriods;
+                plannedCourse.byuId = course.byuId
+                plannedCourse.titleCode = course.titleCode
+                plannedCourse.credits = course.credits
+                plannedCourse.sectionType = section.sectionType
 				$scope.plannedCourses.push(plannedCourse);
 			}
 
@@ -277,4 +283,45 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
             }
         };
 
+        $scope.registerClasses = function() {
+            $cookies.c = "regOfferings"
+            var classes = []
+            console.log($scope.plannedCourses)
+            for( var i=0; i<$scope.plannedCourses.length; i++ ) {
+                var klass = {}
+                klass.e = '@AddClass'
+                klass.courseId = $scope.plannedCourses[i].byuId
+                klass.titleCode = $scope.plannedCourses[i].titleCode
+                klass.credits = $scope.plannedCourses[i].credits
+                klass.sectionType = $scope.plannedCourses[i].sectionType
+                klass.sectionId = $scope.plannedCourses[i].sectionId
+                classes.push(klass)
+            }
+            $cookies.classes = JSON.stringify(classes)
+
+            var domain = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+            var query = '?service='+encodeURIComponent(domain+'/register.html')
+            var url = 'https://cas.byu.edu/cas/login'
+            $("#registration-iframe").attr("src", url + query)
+            $("#registration-iframe").css("display", "inline")
+            $scope.plannedCourses = []
+        }
+
 }]);
+
+//TODO remove when not necessary
+function loadRegistrationPage() {
+    var domain = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+    $("#registration-iframe").attr("src", domain + '/register.html')
+}
+
+//TODO remove when not necessary
+function clearCaptchaCookies() {
+    document.cookie = "recaptchaChallenge" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = "recaptchaAnswer" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+//TODO remove when not necessary
+function hideIframe() {
+    $("#registration-iframe").css("display", "none")
+}
