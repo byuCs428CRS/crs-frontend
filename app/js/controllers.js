@@ -5,13 +5,13 @@ var classregControllers = angular.module('classregControllers', []);
 
 classregControllers.controller('HeaderController', ['$scope', '$location',
 	function($scope, $location) {
-		$scope.isActive = function(viewLocation) {
+		$scope.isActive = function(viewLocation) { 
         return viewLocation === $location.path();
     };
 }]);
 
-classregControllers.controller('CourseListCtrl', ['$scope', '$http',
-	function($scope, $http) {
+classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
+	function($scope, $http, $cookies) {
 
 	    $http.get('courses/courses.json').success(function(data) {
 	    	$scope.departments = data.departments;
@@ -30,6 +30,8 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 					newCourse.dept = {};
 					newCourse.dept.title = dept.title;
 					newCourse.dept.shortCode = dept.shortCode;
+                    newCourse.titleCode = course.titleCode;
+                    newCourse.byuId = course.byuId
 					newCourse.sections = [];
 					angular.forEach(course.sections, function(oldSection) {
 						var newSection = {}
@@ -41,6 +43,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 						newSection.classSize = oldSection.classSize;
 						newSection.waitlistCount = oldSection.waitlistCount;
 						newSection.registeredStudents = oldSection.registeredStudents;
+                        newSection.sectionType = oldSection.sectionType
 						angular.forEach(oldSection.times, function(time) {
 							var timeOfDay = time.startTime + '-' + time.endTime;
 							if( timeOfDay in newSection.classPeriods )
@@ -71,7 +74,6 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 		// crossSiteRequest.onerror = function() {
 			// console.log("there was an error")
 		// }
-
 
         $scope.initStuff = function() {
             $scope.loggedIn = false;
@@ -106,8 +108,8 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 	    // Searches both course name and course description fields
 	    $scope.searchQueryFilter = function(course) {
 			var q = angular.lowercase($scope.filterOptions.searchQuery);
-			return (!angular.isDefined(q) || q == "" ||
-				(angular.lowercase(course.title).indexOf(q) >= 0 ||
+			return (!angular.isDefined(q) || q == "" || 
+				(angular.lowercase(course.title).indexOf(q) >= 0 || 
 				angular.lowercase(course.description).indexOf(q) >= 0 ||
 				angular.lowercase(course.dept.shortCode).indexOf(q) >= 0 ||
 				angular.lowercase(course.dept.title).indexOf(q) >= 0 ||
@@ -115,29 +117,29 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 				angular.lowercase(course.dept.shortCode + course.courseId).indexOf(q.replace(/\s/g,'')) >= 0 ||
 				angular.lowercase(course.dept.title.replace(/\s/g,'') + course.courseId).indexOf(q.replace(/\s/g,'')) >= 0));
 		};
-
+		
 		//Filters by department
 		$scope.departmentFilter = function(course) {
 			return $scope.filteredDept === /* all departments */ '' || $scope.filteredDept === course.dept.shortCode
-		}
-
+		};
+		
 		// Filters by course level
 		$scope.courseLevelFilter = function(course) {
 			var targetLevel = course.courseId[0] + '00';
 			return ($scope.filterOptions.levels[targetLevel]) ? true : false;
 		};
-
+		
 		// Sorts table by the selected column and updates ascending/descending order
 		$scope.updateSort = function(selected) {
-			$scope.desc = $scope.sortBy == selected && !$scope.desc;
+			$scope.desc = $scope.sortBy == selected && !$scope.desc; 
 			$scope.sortBy = selected;
 		};
-
+		
 		// Retrieves the styling class for a sortable table header
 		$scope.sortedClass = function(selected) {
 			return $scope.sortBy == selected ? ($scope.desc ? 'sorted-desc' : 'sorted-asc') : '';
 		};
-
+		
 		$scope.abbreviateDay = function(day) {
 			switch( day ) {
 				case 'MONDAY':
@@ -155,8 +157,8 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 				case 'SUNDAY':
 					return 'Su'
 			}
-		}
-
+		};
+		
 		$scope.classPeriodsToString = function(classPeriods) {
 			var prefix = '';
 			var result = '';
@@ -186,7 +188,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 			}
 			return null;
 		};
-
+		
 		$scope.addCourseToPlan = function(course, section) {
 			$scope.saved = false;
 			var fullCourseName = course.dept.shortCode + course.courseId;
@@ -207,11 +209,15 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
 				plannedCourse.sectionId = section.sectionId;
 				plannedCourse.instructor = section.professor;
 				plannedCourse.classPeriods = section.classPeriods;
+                plannedCourse.byuId = course.byuId
+                plannedCourse.titleCode = course.titleCode
+                plannedCourse.credits = course.credits
+                plannedCourse.sectionType = section.sectionType
 				$scope.plannedCourses.push(plannedCourse);
 			}
 
 			var elId = '#plannedCourse-' + ($scope.plannedCourses.length - 1).toString();
-
+			
 			setTimeout(function() {
 				$(elId).effect("highlight", {}, 1000);
 			}, 100);
@@ -271,7 +277,9 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
             } else if ($scope.createPassword != $scope.createPassword2) {
                 $scope.addAlert("Passwords do not match.");
             } else {
-                $scope.registerUser($scope.createUsername, $scope.createPassword);
+                $scope.loggedIn = true;
+                $scope.username = $scope.createUsername;
+                $('#loginModal').modal('hide');
             }
         };
 
@@ -296,3 +304,28 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http',
             $('#loginModal').modal('hide');
         };
     }]);
+        $scope.registerClasses = function() {
+            $cookies.c = "regOfferings"
+            var classes = []
+            console.log($scope.plannedCourses)
+            for( var i=0; i<$scope.plannedCourses.length; i++ ) {
+                var klass = {}
+                klass.e = '@AddClass'
+                klass.courseId = $scope.plannedCourses[i].byuId
+                klass.titleCode = $scope.plannedCourses[i].titleCode
+                klass.credits = $scope.plannedCourses[i].credits
+                klass.sectionType = $scope.plannedCourses[i].sectionType
+                klass.sectionId = $scope.plannedCourses[i].sectionId
+                classes.push(klass)
+            }
+            $cookies.classes = JSON.stringify(classes)
+
+            var domain = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+            var query = '?service='+encodeURIComponent(domain+'/register.html')
+            var url = 'https://cas.byu.edu/cas/login'
+            $("#registration-iframe").attr("src", url + query)
+            $("#registration-iframe").css("display", "inline")
+            $scope.plannedCourses = []
+        }
+
+}]);

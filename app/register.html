@@ -3,29 +3,19 @@
 <head>
     <title>Test</title>
     <script src="js/register.js"></script>
+    <script src="lib/cookies/cookies.js"></script>
+    <script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6LfNVu8SAAAAAEdxT85OqDxtV_5U2pRI493p5ntV"></script>
+    <link rel="stylesheet" href="css/register.css">
 </head>
-<body>
-    <form id="visible" onsubmit="return false;" onclick="addClass()">
-        New year term: <input id="new_year_term" value="20143"><br>
-        Course id: <input id="curr_id" value="10178"><br>
-        New title code: <input id="new_title_code" value="000"><br>
-        Page sequence: <input id="page_sequence" value="-241450180"><br>
-        Credits: <input id="curr_credit" value="3.0"><br>
-        Section type: <input id="section_type" value="DAY"><br>
-        Section num: <input id="section_num" value="001"><br>
-        <input type="submit" value="Add Class">
-    </form>
-    <iframe name="response" width="900" height="600">
-        <html>
-            <body>
-            Response here
-            </body>
-        </html>
-    </iframe>
-    <form method="post" id="invisible" action="https://gamma.byu.edu/ry/ae/prod/registration/cgi/regOfferings.cgi" target="response">
-        <input id="c" name="c" value="regOfferings">
-        <input id="e" name="e" value="@AddClass">
-        <input id="brownie" name="brownie">
-    </form>
+<body onload="detectIfRecaptchaIsNecessary()">
+    <div id="main-content">
+        <form name="registration-form" id="registration-form" target="registration-iframe"
+              action="http://gamma.byu.edu/ry/ae/prod/registration/cgi/regOfferings.cgi">
+            <input id="c" name="c" type="hidden">
+            <input id="e" name="e" type="hidden">
+            <input id="brownie" name="brownie" type="hidden">
+        </form>
+        <iframe style="display: none" width="800" height="400" name="registration-iframe"></iframe>
+    </div>
 </body>
 </html>

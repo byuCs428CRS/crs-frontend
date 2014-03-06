@@ -7,14 +7,16 @@
                 {
                     "title": "Intro to Computer Programming",
                     "owningDepartment": "CS",
+                    "byuId": "01489",
                     "courseId": "142",
                     "description": "An introduction to the basics of computer programming in C++.",
                     "credits": 3.0,
+                    "titleCode": "002",
                     "sections": [
                         {
                             "courseId": "CS142",
-                            "sectionId": "002",
-                            "professor": "Barker, Cory",
+                            "sectionId": "001",
+                            "professor": "Cook, Kevin",
                             "times": [
                                 {
                                     "day": "MONDAY",
@@ -29,8 +31,9 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
-                            "registeredStudents": []
+                            "classSize": 23,
+                            "registeredStudents": [],
+                            "sectionType": "DAY"
                         },
                         {
                             "courseId": "CS142",
@@ -55,7 +58,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -76,7 +79,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -102,7 +105,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -128,7 +131,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -154,7 +157,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -180,7 +183,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -201,7 +204,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -233,7 +236,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -259,7 +262,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -285,7 +288,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -311,7 +314,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -337,7 +340,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -363,7 +366,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -384,7 +387,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -416,7 +419,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -442,7 +445,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -468,7 +471,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -494,7 +497,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -520,7 +523,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -546,7 +549,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -567,7 +570,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -588,7 +591,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -614,7 +617,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -640,7 +643,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -666,7 +669,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -692,7 +695,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -718,7 +721,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -739,7 +742,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -771,7 +774,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -797,7 +800,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -818,7 +821,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -844,7 +847,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -870,7 +873,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -896,7 +899,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -922,7 +925,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -943,7 +946,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -975,7 +978,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -1001,7 +1004,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1027,7 +1030,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1053,7 +1056,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1079,7 +1082,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1105,7 +1108,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1126,7 +1129,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -1158,7 +1161,7 @@
                             ],
                             "room": "221",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         }
                     ],
@@ -1196,7 +1199,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -1222,7 +1225,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1248,7 +1251,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1274,7 +1277,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1300,7 +1303,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1326,7 +1329,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1347,7 +1350,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1368,7 +1371,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -1394,7 +1397,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1420,7 +1423,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1446,7 +1449,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1472,7 +1475,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -1504,7 +1507,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -1530,7 +1533,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1556,7 +1559,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1582,7 +1585,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1608,7 +1611,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1634,7 +1637,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1655,7 +1658,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1676,7 +1679,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -1702,7 +1705,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1728,7 +1731,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1754,7 +1757,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1780,7 +1783,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1806,7 +1809,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1827,7 +1830,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -1859,7 +1862,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -1885,7 +1888,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1911,7 +1914,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1937,7 +1940,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1963,7 +1966,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -1989,7 +1992,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2015,7 +2018,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2041,7 +2044,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2067,7 +2070,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2088,7 +2091,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -2126,7 +2129,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -2152,7 +2155,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2178,7 +2181,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2204,7 +2207,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2230,7 +2233,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2256,7 +2259,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2277,7 +2280,7 @@
                             ],
                             "room": "1024",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -2309,7 +2312,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2330,7 +2333,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2351,7 +2354,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2372,7 +2375,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -2404,7 +2407,7 @@
                             ],
                             "room": "341",
                             "buildingAbbreviation": "JFSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2425,7 +2428,7 @@
                             ],
                             "room": "341",
                             "buildingAbbreviation": "JFSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2446,7 +2449,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2467,7 +2470,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2488,7 +2491,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2509,7 +2512,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "TMCB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -2547,7 +2550,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -2573,7 +2576,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2594,7 +2597,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2620,7 +2623,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2646,7 +2649,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2672,7 +2675,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2698,7 +2701,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2719,7 +2722,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -2751,7 +2754,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -2777,7 +2780,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2803,7 +2806,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2829,7 +2832,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2855,7 +2858,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2881,7 +2884,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2902,7 +2905,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -2934,7 +2937,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -2960,7 +2963,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -2986,7 +2989,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3012,7 +3015,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3038,7 +3041,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3064,7 +3067,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3085,7 +3088,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3106,7 +3109,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -3132,7 +3135,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3158,7 +3161,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3184,7 +3187,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3210,7 +3213,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3236,7 +3239,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3257,7 +3260,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -3289,7 +3292,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -3315,7 +3318,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3336,7 +3339,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3362,7 +3365,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3388,7 +3391,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3414,7 +3417,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3440,7 +3443,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3461,7 +3464,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -3493,7 +3496,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -3519,7 +3522,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3545,7 +3548,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3571,7 +3574,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3597,7 +3600,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3623,7 +3626,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3644,7 +3647,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -3676,7 +3679,7 @@
                             ],
                             "room": "221",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         }
                     ],
@@ -3714,7 +3717,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -3740,7 +3743,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3766,7 +3769,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3792,7 +3795,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3818,7 +3821,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3844,7 +3847,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3865,7 +3868,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3886,7 +3889,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -3912,7 +3915,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3938,7 +3941,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3964,7 +3967,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -3990,7 +3993,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -4022,7 +4025,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -4048,7 +4051,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4074,7 +4077,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4100,7 +4103,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4126,7 +4129,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4152,7 +4155,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4173,7 +4176,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4194,7 +4197,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -4220,7 +4223,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4246,7 +4249,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4272,7 +4275,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4298,7 +4301,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4324,7 +4327,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4345,7 +4348,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -4377,7 +4380,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -4403,7 +4406,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4429,7 +4432,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4455,7 +4458,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4481,7 +4484,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4507,7 +4510,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4533,7 +4536,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4559,7 +4562,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4585,7 +4588,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4606,7 +4609,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -4644,7 +4647,7 @@
                             ],
                             "room": "121",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 23,
                             "registeredStudents": []
                         },
                         {
@@ -4670,7 +4673,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4696,7 +4699,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4722,7 +4725,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4748,7 +4751,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4774,7 +4777,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4795,7 +4798,7 @@
                             ],
                             "room": "230",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -4827,7 +4830,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4848,7 +4851,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4869,7 +4872,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4890,7 +4893,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
@@ -4922,7 +4925,7 @@
                             ],
                             "room": "341",
                             "buildingAbbreviation": "JFSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4943,7 +4946,7 @@
                             ],
                             "room": "341",
                             "buildingAbbreviation": "JFSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4964,7 +4967,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -4985,7 +4988,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -5006,7 +5009,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "JKB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         },
                         {
@@ -5027,7 +5030,7 @@
                             ],
                             "room": "212",
                             "buildingAbbreviation": "JSB",
-                            "classSize": 25, "waitlistCount": 0,
+                            "classSize": 30,
                             "registeredStudents": []
                         }
                     ],
