@@ -1,7 +1,12 @@
 function detectIfRecaptchaIsNecessary() {
     if( Cookies.get('recaptchaChallenge') === undefined || Cookies.get('recaptchaAnswer') === undefined ) {
         console.log("recaptcha necessary")
-        document.getElementById('main-content').innerHTML += '<button onclick="saveRecaptchaAndRegister()">Submit</button>'
+        $.get('/public-api/recaptcha', function(data) {
+            var scriptEl = document.createElement('script')
+            scriptEl.innerHTML = data
+            document.getElementsByTagName('head')[0].appendChild(scriptEl)
+            document.getElementById('main-content').innerHTML += '<button onclick="saveRecaptchaAndRegister()">Submit</button>'
+        });
     } else {
         console.log("no recaptcha necessary. registering")
         document.getElementById("recaptcha_widget_div").style = "display: none"
