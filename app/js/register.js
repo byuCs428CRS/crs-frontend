@@ -5,7 +5,17 @@ function detectIfRecaptchaIsNecessary() {
             var scriptEl = document.createElement('script')
             scriptEl.innerHTML = data
             document.getElementsByTagName('head')[0].appendChild(scriptEl)
-            document.getElementById('main-content').innerHTML += '<button onclick="saveRecaptchaAndRegister()">Submit</button>'
+            document.getElementsByTagName('body')[0].innerHTML +=
+                '<div id="main-content">'+
+                    '<button onclick="saveRecaptchaAndRegister()">Submit</button>'+
+                    '<form name="registration-form" id="registration-form" target="registration-iframe"'+
+                        'action="http://gamma.byu.edu/ry/ae/prod/registration/cgi/regOfferings.cgi">'+
+                        '<input id="c" name="c" type="hidden">'+
+                        '<input id="e" name="e" type="hidden">'+
+                        '<input id="brownie" name="brownie" type="hidden">'+
+                    '</form>'+
+                    '<iframe style="display: none" width="800" height="400" name="registration-iframe"></iframe>'+
+                '</div>';
         });
     } else {
         console.log("no recaptcha necessary. registering")
