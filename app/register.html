@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="css/register.css">
 </head>
 <body onload="detectIfRecaptchaIsNecessary()">
-
+<div id="recaptcha"></div>
+<div id="registration-submission">
+    <button onclick="saveRecaptchaAndRegister()">Submit</button>
+    <form name="registration-form" method="post" id="registration-form" target="registration-iframe"
+        action="https://gamma.byu.edu/ry/ae/prod/registration/cgi/regOfferings.cgi">
+        <input id="c" name="c" type="hidden">
+        <input id="e" name="e" type="hidden">
+        <input id="brownie" name="brownie" type="hidden">
+    </form>
+    <iframe style="display: none" width="800" height="400" name="registration-iframe"></iframe>
+</div>
 </body>
 </html>

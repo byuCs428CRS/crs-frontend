@@ -15,7 +15,7 @@
                     "sections": [
                         {
                             "courseId": "CS142",
-                            "sectionId": "009",
+                            "sectionId": "001",
                             "professor": "Cook, Kevin",
                             "times": [
                                 {
@@ -37,7 +37,7 @@
                         },
                         {
                             "courseId": "CS142",
-                            "sectionId": "001",
+                            "sectionId": "009",
                             "professor": "Roper, Paul",
                             "times": [
                                 {
