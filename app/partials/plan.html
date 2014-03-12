@@ -146,16 +146,13 @@
                             </tbody>
                         </thead>
                     </table>
-                    <button ng-show="plannedCourses.length" ng-click="viewWeekLayout()" class="btn btn-info" data-toggle="modal" data-target="#weekLayoutModal">
-                        <span><span class="glyphicon glyphicon-calendar"></span>  View Week Layout</span>
-                    </button>
-                    <a ng-show="plannedCourses.length" ng-click="savePlan()" class="btn btn-info" ng-class="{ disabled: saved }">
-                        <span ng-show="!saved"><span class="glyphicon glyphicon-floppy-save"></span>  Save Plan</span>
-                        <span ng-show="saved"><span class="glyphicon glyphicon-floppy-saved"></span>  Plan saved!</span>
+                    <a ng-show="plannedCourses.length" ng-click="savePlan()" class="btn btn-primary" ng-class="{ disabled: saved }">
+                        <span ng-show="!saved"><span class="glyphicon glyphicon-save"></span>  Save Plan</span>
+                        <span ng-show="saved"><span class="glyphicon glyphicon-saved"></span>  Plan saved!</span>
                     </a>
-					<a ng-show="plannedCourses.length" ng-click="registerClasses()" class="btn btn-info" ng-class="{ disabled: saved }">
-                        <span ng-show="!added"><span class="glyphicon glyphicon-floppy-save"></span>  Register</span>
-                        <span ng-show="added"><span class="glyphicon glyphicon-floppy-saved"></span>  Courses Registered!</span>
+					<a ng-show="plannedCourses.length" ng-click="registerClasses()" class="btn btn-primary" ng-class="{ disabled: saved }">
+                        <span ng-show="!added"><span class="glyphicon glyphicon-pushpin"></span>  Register</span>
+                        <span ng-show="added"><span class="glyphicon glyphicon-thumbs-up"></span>  Courses Registered!</span>
                     </a>
                 </div>
 

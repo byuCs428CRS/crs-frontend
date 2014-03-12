@@ -286,19 +286,24 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
 
             $http.get('http://andyetitcompiles.com/auth/login').success(function(data) {
                 data['username'] = username;
-                var hashedPw = doHash(password, data['pepper']);
-                data['pass'] = hashedPw;
+                data['pass'] = doHash(password, data['pepper']);
+                console.log(data);
                 $http.post('http://andyetitcompiles.com/auth/login', data)
                     .success(function(data) {
                         console.log(data);
+                        // successful
+                        $scope.loggedIn = true;
+                        $scope.username = username;
+                        $('#loginModal').modal('hide');
                     }).error(function(data) {
+                        console.log(data);
                         // username already exists?
+                        $scope.addAlert("There was a problem with your username or password.");
                     });
+            }).error(function(data) {
+                $scope.addAlert("There was an error creating your account.");
             });
-            // successful
-            $scope.loggedIn = true;
-            $scope.username = username;
-            $('#loginModal').modal('hide');
+
         };
 
         $scope.registerClasses = function() {
