@@ -35,6 +35,8 @@ body {
 
 .selectable-tbody:hover .selectable-td {
     background-color: rgb(238, 238, 238);
+    cursor: pointer;
+    cursor: hand;
 }
 
 .selected-tbody .selectable-td {
