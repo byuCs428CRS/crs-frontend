@@ -1,22 +1,31 @@
+var recaptchaChallenge;
+
 function detectIfRecaptchaIsNecessary() {
     if( Cookies.get('recaptchaChallenge') === undefined || Cookies.get('recaptchaAnswer') === undefined ) {
-        console.log("recaptcha necessary")
-        document.getElementById('main-content').innerHTML += '<button onclick="saveRecaptchaAndRegister()">Submit</button>'
+        $.get('/public-api/recaptcha', function(data) {
+            console.log("Data = "+data)
+            var response = JSON.parse(data);
+            console.log(response)
+            $("#recaptcha").html(
+                '<img src="data:image/jpeg;base64,'+response.image.replace('"', '&quot;')+'">' +
+                '<a href="javascript:detectIfRecaptchaIsNecessary()">Refresh</a>' +
+                '<br><input id="recaptchaAnswer" type="text">'
+            );
+            recaptchaChallenge = response.challenge
+        });
     } else {
-        console.log("no recaptcha necessary. registering")
-        document.getElementById("recaptcha_widget_div").style = "display: none"
-        register()
+        register(false)
     }
 
 }
 
 function saveRecaptchaAndRegister() {
-    Cookies.set('recaptchaChallenge', document.getElementById('recaptcha_challenge_field').value, {expires: 1800})
-    Cookies.set('recaptchaAnswer', document.getElementById('recaptcha_response_field').value, {expires: 1800})
-    register();
+    Cookies.set('recaptchaChallenge', recaptchaChallenge)
+    Cookies.set('recaptchaAnswer', document.getElementById('recaptchaAnswer').value, {expires: 1800})
+    register(true);
 }
 
-function register() {
+function register(useRecaptcha) {
     var classes = JSON.parse(Cookies.get('classes'));
 
     for( var i=0; i<classes.length; i++ ) {
@@ -26,16 +35,22 @@ function register() {
         brownie += 'new_year_term='+getTerm()
         brownie += '&curr_id='+klass.courseId
         brownie += '&new_title_code='+klass.titleCode
-        brownie += '&page_sequence='+'-241450180'
+        brownie += '&page_sequence='+'1016452204'
         brownie += '&curr_credit='+klass.credits
         brownie += '&section_type='+klass.sectionType
         brownie += '&section_num='+klass.sectionId
-        brownie += '&captcha_challenge='+Cookies.get('recaptchaChallenge')
-        brownie += '&captcha_value='+Cookies.get('recaptchaAnswer')
+        if( useRecaptcha ) {
+            brownie += '&captcha_challenge='+Cookies.get('recaptchaChallenge')
+            brownie += '&captcha_value='+Cookies.get('recaptchaAnswer')
+        }
 
         document.getElementById('c').value = Cookies.get('c')
         document.getElementById('e').value = klass.e
         document.getElementById('brownie').value = brownie
+        console.log("c = "+document.getElementById('c').value)
+        console.log("e = "+document.getElementById('e').value)
+        console.log("brownie = "+document.getElementById('brownie').value)
+
         document.getElementById('registration-form').submit()
     }
 

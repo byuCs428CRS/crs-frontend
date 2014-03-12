@@ -326,7 +326,24 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             var query = '?service='+encodeURIComponent(domain+'/register.html')
             var url = 'https://cas.byu.edu/cas/login'
             $("#registration-iframe").attr("src", url + query)
-            $("#registration-iframe").css("display", "inline")
+            $("#registration-iframe").css("display", "")
             $scope.plannedCourses = []
         };
     }]);
+
+//TODO remove when not necessary
+function loadRegistrationPage() {
+    var domain = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+    $("#registration-iframe").attr("src", domain + '/register.html')
+}
+
+//TODO remove when not necessary
+function clearCaptchaCookies() {
+    document.cookie = "recaptchaChallenge" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = "recaptchaAnswer" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+//TODO remove when not necessary
+function hideIframe() {
+    $("#registration-iframe").css("display", "none")
+}
