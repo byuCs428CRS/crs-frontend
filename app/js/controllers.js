@@ -191,6 +191,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
 		
 		$scope.addCourseToPlan = function(course, section) {
 			$scope.saved = false;
+            $scope.added = false;
 			var fullCourseName = course.dept.shortCode + course.courseId;
 			var cid = fullCourseName + "-" + section.sectionId;
 
@@ -225,6 +226,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
 
 		$scope.removeCourseFromPlan = function(course) {
 			$scope.saved = false;
+            $scope.added = false;
 			var i = $scope.plannedCourses.indexOf(course);
 			if (i > -1)
 				$scope.plannedCourses.splice(i, 1);
@@ -307,27 +309,28 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
         };
 
         $scope.registerClasses = function() {
-            $cookies.c = "regOfferings"
+            $cookies.c = "regOfferings";
             var classes = []
-            console.log($scope.plannedCourses)
+            console.log($scope.plannedCourses);
             for( var i=0; i<$scope.plannedCourses.length; i++ ) {
                 var klass = {}
-                klass.e = '@AddClass'
-                klass.courseId = $scope.plannedCourses[i].byuId
-                klass.titleCode = $scope.plannedCourses[i].titleCode
-                klass.credits = $scope.plannedCourses[i].credits
-                klass.sectionType = $scope.plannedCourses[i].sectionType
-                klass.sectionId = $scope.plannedCourses[i].sectionId
+                klass.e = '@AddClass';
+                klass.courseId = $scope.plannedCourses[i].byuId;
+                klass.titleCode = $scope.plannedCourses[i].titleCode;
+                klass.credits = $scope.plannedCourses[i].credits;
+                klass.sectionType = $scope.plannedCourses[i].sectionType;
+                klass.sectionId = $scope.plannedCourses[i].sectionId;
                 classes.push(klass)
             }
             $cookies.classes = JSON.stringify(classes)
 
             var domain = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
-            var query = '?service='+encodeURIComponent(domain+'/register.html')
-            var url = 'https://cas.byu.edu/cas/login'
-            $("#registration-iframe").attr("src", url + query)
-            $("#registration-iframe").css("display", "")
-            $scope.plannedCourses = []
+            var query = '?service='+encodeURIComponent(domain+'/register.html');
+            var url = 'https://cas.byu.edu/cas/login';
+            var regFrame = $("#registration-iframe");
+            regFrame.attr("src", url + query);
+            $scope.plannedCourses = [];
+            $scope.added = true;
         };
     }]);
 
@@ -342,8 +345,8 @@ function clearCaptchaCookies() {
     document.cookie = "recaptchaChallenge" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     document.cookie = "recaptchaAnswer" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
-
-//TODO remove when not necessary
-function hideIframe() {
-    $("#registration-iframe").css("display", "none")
-}
+//
+////TODO remove when not necessary
+//function hideIframe() {
+//    $("#registration-iframe").css("display", "none")
+//}
