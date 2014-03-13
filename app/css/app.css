@@ -39,6 +39,10 @@ body {
     cursor: hand;
 }
 
+.selectable-special:hover .selectable-td {
+    background-color: #D6F8D6;
+}
+
 .selected-tbody .selectable-td {
     background-color: rgb(238, 238, 238) !important;
 }

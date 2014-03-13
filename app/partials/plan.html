@@ -98,8 +98,8 @@
                             <td colspan="4">No sections offered this semester!</td>
                         </tr>
                         </tbody>
-                        <tbody ng-repeat="section in selectedCourse.sections">
-                        <tr>
+                        <tbody class="selectable-tbody selectable-special" ng-repeat="section in selectedCourse.sections" ng-mouseenter="showTempEvent(selectedCourse, section)" ng-mouseleave="hideTempEvent(selectedCourse, section)">
+                        <tr class="selectable-td">
                             <td>{{ section.sectionId }}</td>
                             <td>{{ section.professor }}</td>
                             <td>
@@ -155,13 +155,15 @@
                     <span ng-show="added"><span class="glyphicon glyphicon-thumbs-up"></span>  Courses Registered!</span>
                 </button>
             </div>
-
             <div class="well">
                 <h3>Week View</h3>
                 <br>
-                <button ng-click="viewWeekLayout()" class="btn btn-primary" data-toggle="modal" data-target="#weekLayoutModal">
-                    <span><span class="glyphicon glyphicon-calendar"></span>  View Details</span>
-                </button>
+                <!--<button ng-click="viewWeekLayout()" class="btn btn-primary" data-toggle="modal" data-target="#weekLayoutModal">-->
+                    <!--<span><span class="glyphicon glyphicon-calendar"></span>  View Details</span>-->
+                <!--</button>-->
+                <div ng-controller="CalendarCtrl">
+                    <div id="calendar" class="calendar" ng-model="eventSources" config="uiConfig.calendar" ui-calendar="uiConfig.calendar"></div>
+                </div>
             </div>
         </div>
 

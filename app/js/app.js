@@ -4,7 +4,8 @@
 var classregApp = angular.module('classregApp', [
   'ngRoute',
   'classregControllers',
-  'ngCookies'
+  'ngCookies',
+  'ui.calendar'
 ]);
 
 classregApp.config(['$routeProvider',
