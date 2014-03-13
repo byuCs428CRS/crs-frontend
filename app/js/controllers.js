@@ -200,8 +200,9 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             $scope.hideTempEvent(course, section);
             var fullCourseName = course.dept.shortCode + course.courseId;
             var cid = fullCourseName + "-" + section.sectionId;
+            var classLocation = section.buildingAbbreviation + ' ' + section.room;
 
-            $scope.$broadcast("courseAdded", {course: cid, classPeriods: section.classPeriods, color: eventColor });
+            $scope.$broadcast("courseAdded", {course: cid, classPeriods: section.classPeriods, classLocation: classLocation, color: eventColor });
 
             var theCourse = $scope.getPlannedCourse(course.dept.shortCode, course.courseId);
             if (theCourse) {
@@ -390,16 +391,33 @@ classregControllers.controller('CalendarCtrl', ['$scope',
                 columnFormat: {
                     week: 'ddd' // Mon
                 },
-                eventRender: function(event, element) {
-                    element.qtip({ content: event.title });
+                eventRender:function(event,element,view){
+                    var courseInfo = event.title.split('-');
+                    var courseName = courseInfo[0];
+                    var sectionNum = courseInfo[1];
+                    var eventTime = $.fullCalendar.formatDate(event.start, "h:sstt")+" - "+
+                    $.fullCalendar.formatDate(event.end, "h:sstt");
+
+                    element.qtip({
+                        content:{
+                            text: '<h5>' + courseName + ', Section ' + sectionNum + '</h5>' +
+                                  '<p>' + eventTime + '</p>' +
+                                  '<p>' + event.description + '</p>'
+                        },
+                        position:{
+                            my:'top center',
+                            at:'bottom center'
+                        },
+                        show:'mouseover'
+                    });
                 }
             }
         };
 
-        // this is never used but it's necessary for the fullcalendar
+// this is never used but it's necessary for the fullcalendar
         $scope.eventSources = [];
 
-        $scope.addCourseToCalendar = function(course, classPeriods, color, className) {
+        $scope.addCourseToCalendar = function(course, classPeriods, classLocation, color, className) {
             for (var k in classPeriods) {
                 // ["1:00", "2:00"]
                 var timespan = k.split('-');
@@ -426,6 +444,7 @@ classregControllers.controller('CalendarCtrl', ['$scope',
                     event.title = course;
                     event.start = new Date(y, m, d + dayOffsets[day], startHrs, startMins);
                     event.end = new Date(y, m, d + dayOffsets[day], endHrs, endMins);
+                    event.description = classLocation;
                     event.allDay = false;
                     event.color = color;
                     event.className = className;
@@ -439,7 +458,8 @@ classregControllers.controller('CalendarCtrl', ['$scope',
             var color = args.color;
             var className = args.className;
             var classPeriods = args.classPeriods;
-            $scope.addCourseToCalendar(course, classPeriods, color, className);
+            var classLocation = args.classLocation;
+            $scope.addCourseToCalendar(course, classPeriods, classLocation, color, className);
         });
 
         $scope.$on("courseRemoved", function (event, args) {
@@ -462,7 +482,7 @@ classregControllers.controller('CalendarCtrl', ['$scope',
             }
         });
 
-        //$scope.$on("showCourse")
+//$scope.$on("showCourse")
 
     }]);
 

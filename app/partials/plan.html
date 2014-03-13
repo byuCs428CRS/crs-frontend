@@ -98,7 +98,7 @@
                             <td colspan="4">No sections offered this semester!</td>
                         </tr>
                         </tbody>
-                        <tbody class="selectable-tbody selectable-special" ng-repeat="section in selectedCourse.sections" ng-mouseenter="showTempEvent(selectedCourse, section)" ng-mouseleave="hideTempEvent(selectedCourse, section)">
+                        <tbody class="selectable-special" ng-repeat="section in selectedCourse.sections" ng-mouseenter="showTempEvent(selectedCourse, section)" ng-mouseleave="hideTempEvent(selectedCourse, section)">
                         <tr class="selectable-td">
                             <td>{{ section.sectionId }}</td>
                             <td>{{ section.professor }}</td>
