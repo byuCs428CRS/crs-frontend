@@ -61,7 +61,7 @@
                     <th class="sortable-header" ng-class="sortedClass('title')" ng-click="updateSort('title')">Name</th>
                 </tr>
                 </thead>
-                <tbody class="selectable-tbody" ng-class="course == selectedCourse ? 'selected-tbody' : ''" ng-repeat="course in filtered = (courses | filter:basicFilters | filter:searchQueryFilter | filter:courseLevelFilter | filter:departmentFilter | orderBy:sortBy:desc)" ng-click="$parent.selectedCourse = course">
+                <tbody class="selectable-tbody" ng-click="$parent.selectedCourse = course" ng-class="course == selectedCourse ? 'selected-tbody' : ''" ng-repeat="course in filtered = (courses | filter:basicFilters | filter:searchQueryFilter | filter:courseLevelFilter | filter:departmentFilter | orderBy:sortBy:desc)">
                 <tr>
                     <td class="selectable-td">{{ course.dept.shortCode }}</td>
                     <td class="selectable-td">{{ course.courseId }}</td>
@@ -135,8 +135,8 @@
                         <th>Class Periods</th>
                         <th></th>
                     </tr>
-                    <tbody ng-repeat="course in plannedCourses">
-                    <tr id="plannedCourse-{{$index}}">
+                    <tbody class="selectable-tbody" ng-click="updateSelectedCourse(course.dept.shortCode, course.courseId)" ng-class="course.courseId == selectedCourse.courseId && course.dept.shortCode == selectedCourse.dept.shortCode ? 'selected-tbody' : ''" ng-repeat="course in plannedCourses">
+                    <tr class="selectable-td" id="plannedCourse-{{$index}}">
                         <td>{{ course.dept.shortCode }} {{ course.courseId }}</td>
                         <td>{{ course.sectionId }}</td>
                         <td>{{ course.instructor }}</td>

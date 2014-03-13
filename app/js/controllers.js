@@ -149,6 +149,13 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             return $scope.sortBy == selected ? ($scope.desc ? 'sorted-desc' : 'sorted-asc') : '';
         };
 
+        $scope.updateSelectedCourse = function(dept, id) {
+            var course = $.grep($scope.courses, function(c){ return c.dept.shortCode == dept && c.courseId == id; });
+            if (course) {
+                $scope.selectedCourse = course[0];
+            }
+        };
+
         $scope.abbreviateDay = function(day) {
             switch( day ) {
                 case 'MONDAY':
