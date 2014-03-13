@@ -84,7 +84,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             // TODO: check the server for a session, set loggedIn to true and populate session data
             $scope.courseLevels = ['100', '200', '300', '400', '500', '600'];
             $scope.currentSemester = "Summer 2014" //Should do some kind of logic or API call here
-            $scope.plannedCourses = [];
+            $scope.initPlannedCourses();
             $scope.signinAlerts = [];
             $scope.saved = false;
             $scope.filterOptions = {
@@ -105,6 +105,11 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             $scope.createUsername = '';
             $scope.createPassword = '';
             $scope.createPassword2 = '';
+        };
+
+        $scope.initPlannedCourses = function() {
+            $scope.plannedCourses = [];
+            $scope.$broadcast("removeAllCourses");
         };
 
         $scope.initStuff();
@@ -359,7 +364,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             var url = 'https://cas.byu.edu/cas/login';
             var regFrame = $("#registration-iframe");
             regFrame.attr("src", url + query);
-            $scope.plannedCourses = [];
+            $scope.initPlannedCourses();
             $scope.added = true;
         };
     }]);
@@ -480,6 +485,12 @@ classregControllers.controller('CalendarCtrl', ['$scope',
                     $('#calendar').fullCalendar('updateEvent', event);
                 }
             }
+        });
+
+        $scope.$on("removeAllCourses", function(event) {
+            $('#calendar').fullCalendar('removeEvents', function (calEvent) {
+               return true;
+            });
         });
 
 //$scope.$on("showCourse")
