@@ -25,3 +25,7 @@ classregApp.config(['$routeProvider',
         redirectTo: '/home'
       });
   }]);
+
+function getDisplayedTitle(event) {
+    return event.title.split('-')[0];
+}

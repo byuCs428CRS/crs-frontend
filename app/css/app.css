@@ -71,6 +71,11 @@ h2 {
     background-color: rgb(238, 238, 238) !important;
 }
 
+#course-table-container {
+    height: 75vh;
+    overflow: scroll;
+}
+
 #coursesTable td {
     white-space: nowrap;
 }

@@ -3,6 +3,7 @@
 var tempEventColor = '#4FB14F';
 var eventColor = '#428bca';
 var greyedOutEventColor = '#DDD';
+var conflictingEventColor = '#C25151';
 
 /* Controllers */
 var classregControllers = angular.module('classregControllers', []);
@@ -262,7 +263,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
                 // change color of other sections of this course to gray
                 $scope.$broadcast("changeEventColor", {course: cid.split('-')[0], color: greyedOutEventColor});
                 // show temp event on the calendar
-                $scope.$broadcast("courseAdded", {course: cid, classPeriods: section.classPeriods, color: tempEventColor });
+                $scope.$broadcast("courseAdded", {course: cid, classPeriods: section.classPeriods, color: tempEventColor, className: 'temp' });
             }
         };
 
@@ -328,11 +329,11 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
 
         $scope.registerUser = function(username, password) {
 
-            $http.get('http://andyetitcompiles.com/auth/login').success(function(data) {
+            $http.get('http://andyetitcompiles.com/auth/login').success(function(data, status, headers) {
                 data['username'] = username;
                 data['pass'] = doHash(password, data['pepper']);
-                console.log(data);
-                $http.post('http://andyetitcompiles.com/auth/login', data)
+
+                $http.post('http://andyetitcompiles.com/auth/register', data)
                     .success(function(data) {
                         console.log(data);
                         // successful
@@ -340,7 +341,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
                         $scope.username = username;
                         $('#loginModal').modal('hide');
                     }).error(function(data) {
-                        console.log(data);
+                        //console.log(data);
                         // username already exists?
                         $scope.addAlert("There was a problem with your username or password.");
                     });
@@ -408,13 +409,13 @@ classregControllers.controller('CalendarCtrl', ['$scope',
                     var courseName = courseInfo[0];
                     var sectionNum = courseInfo[1];
                     var eventTime = $.fullCalendar.formatDate(event.start, "h:sstt")+" - "+
-                    $.fullCalendar.formatDate(event.end, "h:sstt");
+                        $.fullCalendar.formatDate(event.end, "h:sstt");
 
                     element.qtip({
                         content:{
                             text: '<h5>' + courseName + ', Section ' + sectionNum + '</h5>' +
-                                  '<p>' + eventTime + '</p>' +
-                                  '<p>' + event.description + '</p>'
+                                '<p>' + eventTime + '</p>' +
+                                '<p>' + event.description + '</p>'
                         },
                         position:{
                             my:'top center',
@@ -458,11 +459,43 @@ classregControllers.controller('CalendarCtrl', ['$scope',
                     event.end = new Date(y, m, d + dayOffsets[day], endHrs, endMins);
                     event.description = classLocation;
                     event.allDay = false;
+
+                    if ($scope.eventConflicts(event)) {
+                        color = conflictingEventColor
+                    }
+
                     event.color = color;
                     event.className = className;
+
                     $('#calendar').fullCalendar('renderEvent', event);
                 }
             }
+        };
+
+        $scope.eventConflicts = function(event) {
+            var start = new Date(event.start);
+            var end = new Date(event.end);
+
+            var overlap = $('#calendar').fullCalendar('clientEvents', function(ev) {
+                if (ev == event)
+                    return false;
+                var estart = new Date(ev.start);
+                var eend = new Date(ev.end);
+
+                // overlaps and it's not the same course
+                return ((Math.round(estart)/1000 < Math.round(end)/1000 && Math.round(eend) > Math.round(start)) &&
+                    (ev.title.split('-')[0] != event.title.split('-')[0]));
+            });
+
+            return (overlap.length);
+        };
+
+        $scope.isTemp = function(event) {
+            return (event.className == 'temp');
+        };
+
+        $scope.getCourseName = function(event) {
+            return event.title.split('-')[0];
         };
 
         $scope.$on("courseAdded", function (event, args) {
@@ -478,29 +511,28 @@ classregControllers.controller('CalendarCtrl', ['$scope',
             // remove only events with class 'temp'
             $('#calendar').fullCalendar('removeEvents', function (calEvent) {
                 return (calEvent.title == args.course) &&
-                    ((args.temp && calEvent.color == tempEventColor) || (!args.temp && calEvent.color == eventColor));
+                    ((args.temp && $scope.isTemp(calEvent)) || (!args.temp && !$scope.isTemp(calEvent)));
             });
-//            "<div class='fc-event-time'>"+q(ae(t.start,t.end,y("timeFormat")))+"</div>"+
         });
 
+        // changes *all* events of a certain course (ignoring section)
         $scope.$on("changeEventColor", function (event, args) {
-            var events = $('#calendar').fullCalendar('clientEvents');
+            var calendar = $('#calendar');
+            var events = calendar.fullCalendar('clientEvents');
             for (var i = 0, len = events.length; i < len; i++) {
                 event = events[i];
-                if (event.title.split('-')[0] == args.course) {
-                    event.color = args.color;
-                    $('#calendar').fullCalendar('updateEvent', event);
+                if ($scope.getCourseName(event) == args.course) {
+                    event.color = $scope.eventConflicts(event) ? conflictingEventColor : args.color;
+                    calendar.fullCalendar('updateEvent', event);
                 }
             }
         });
 
         $scope.$on("removeAllCourses", function(event) {
             $('#calendar').fullCalendar('removeEvents', function (calEvent) {
-               return true;
+                return true;
             });
         });
-
-//$scope.$on("showCourse")
 
     }]);
 
@@ -515,8 +547,3 @@ function clearCaptchaCookies() {
     document.cookie = "recaptchaChallenge" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     document.cookie = "recaptchaAnswer" + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
-//
-////TODO remove when not necessary
-//function hideIframe() {
-//    $("#registration-iframe").css("display", "none")
-//}
