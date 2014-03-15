@@ -8,15 +8,112 @@ var conflictingEventColor = '#C25151';
 /* Controllers */
 var classregControllers = angular.module('classregControllers', []);
 
-classregControllers.controller('HeaderController', ['$scope', '$location',
-    function($scope, $location) {
+classregControllers.controller('RootScopeCtrl', ['$rootScope', '$http',
+    function($rootScope, $http) {
+        // query the server to check if the user is in an authenticated session right now
+        $rootScope.signinAlerts = [];
+        $rootScope.signinTab = true;
+        $rootScope.createTab = false;
+
+        $rootScope.addAlert = function(message) {
+            $rootScope.signinAlerts.push({msg: message});
+        };
+
+        $rootScope.closeAlert = function(index) {
+            $rootScope.signinAlerts.splice(index, 1);
+        };
+
+        $rootScope.signInUser = function() {
+            $rootScope.signinAlerts.length = 0;
+            if (!($rootScope.loginUsername && $rootScope.loginUsername.length && $rootScope.loginPassword && $rootScope.loginPassword.length)) {
+                $rootScope.addAlert("All fields are required.");
+            } else {
+                $rootScope.loggedIn = true;
+                $rootScope.username = $rootScope.loginUsername;
+                $('#loginModal').modal('hide');
+                //$rootScope._savePlan();
+            }
+        };
+
+        $rootScope.signOutUser = function() {
+            $rootScope.$broadcast('userSignedOut');
+            $rootScope.loggedIn = false;
+            $rootScope.loginUsername = '';
+            $rootScope.loginPassword = '';
+            $rootScope.createUsername = '';
+            $rootScope.createPassword = '';
+            $rootScope.createPassword2 = '';
+        };
+
+        $rootScope.createUserAccount = function() {
+            $rootScope.signinAlerts.length = 0;
+            if (!($rootScope.createUsername && $rootScope.createUsername.length && $rootScope.createPassword && $rootScope.createPassword.length && $rootScope.createPassword2 && $rootScope.createPassword2.length)) {
+                $rootScope.addAlert("All fields are required.");
+            } else if (!/^[a-z0-9_\-@]+$/i.test($rootScope.createUsername)) {
+                $rootScope.addAlert("Username cannot contain special characters other than -, _, and @.");
+            } else if ($scope.createPassword != $rootScope.createPassword2) {
+                $rootScope.addAlert("Passwords do not match.");
+            } else {
+                $rootScope.registerUser($rootScope.createUsername, $rootScope.createPassword);
+            }
+        };
+
+        $rootScope.registerUser = function(username, password) {
+
+            $http.get('http://andyetitcompiles.com/auth/login').success(function(data, status, headers) {
+                data['username'] = username;
+                data['pass'] = doHash(password, data['pepper']);
+
+                $http.post('http://andyetitcompiles.com/auth/register', data)
+                    .success(function(data) {
+                        console.log(data);
+                        // successful
+                        $rootScope.loggedIn = true;
+                        $rootScope.username = username;
+                        $('#loginModal').modal('hide');
+                    }).error(function(data) {
+                        //console.log(data);
+                        // username already exists?
+                        $rootScope.addAlert("There was a problem with your username or password.");
+                    });
+            }).error(function(data) {
+                $rootScope.addAlert("There was an error creating your account.");
+            });
+
+        };
+    }
+]);
+
+classregControllers.controller('HeaderController', ['$scope', '$rootScope', '$location',
+    function($scope, $rootScope, $location) {
         $scope.isActive = function(viewLocation) {
             return viewLocation === $location.path();
         };
-    }]);
+    }
+]);
 
-classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
-    function($scope, $http, $cookies) {
+classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies', '$rootScope', '$interval',
+    function($scope, $http, $cookies, $rootScope, $interval) {
+        $scope.setSizes = function() {
+            // #course-table-container: 74%
+            // #planned-course-table-container: 27%
+            // #sections-table-container: 80%
+            // #planned-classes-container: 38%
+            // #calendar-container: 39%
+            var height = $(window).height();
+            $("#course-table-container").css('height', percentStr(height, 74));
+            $("#planned-course-table-container").css('height', percentStr(height, 27));
+            $("#sections-table-container").css('height', percentStr(height, 80));
+            $("#planned-classes-container").css('height', percentStr(height, 39));
+            $("#calendar-container").css('height', percentStr(height, 39));
+
+        };
+
+        var percentStr = function(height, pc) {
+            return parseInt((pc * height) / 100) + 'px';
+        };
+
+        $(window).bind('resize', $scope.setSizes());
 
         $http.get('courses/courses.json').success(function(data) {
             $scope.departments = data.departments;
@@ -64,6 +161,13 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             });
         });
 
+        var autoSave = $interval(function () {
+            if ($rootScope.loggedIn) {
+                $scope._savePlan()
+            }
+        }, 5000);
+        $scope.$on('$destroy', function () { $interval.cancel(autoSave); });
+
         // $http.get('courses/courses.json').success(function(data) {
         // 	$scope.courses = data;
         // });
@@ -81,12 +185,9 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
         // }
 
         $scope.initStuff = function() {
-            $scope.loggedIn = false;
-            // TODO: check the server for a session, set loggedIn to true and populate session data
             $scope.courseLevels = ['100', '200', '300', '400', '500', '600'];
             $scope.currentSemester = "Summer 2014" //Should do some kind of logic or API call here
             $scope.initPlannedCourses();
-            $scope.signinAlerts = [];
             $scope.saved = false;
             $scope.filterOptions = {
                 levels: {}
@@ -94,22 +195,19 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             $scope.sortBy = 'dept.title';
             $scope.filteredDept = '';
             $scope.selectedCourse = undefined;
-            $scope.signinTab = true;
-            $scope.createTab = false;
 
             angular.forEach($scope.courseLevels, function(level) {
                 $scope.filterOptions.levels[level] = true;
             });
-
-            $scope.loginUsername = '';
-            $scope.loginPassword = '';
-            $scope.createUsername = '';
-            $scope.createPassword = '';
-            $scope.createPassword2 = '';
         };
+
+        $scope.$on("userSignedOut", function() {
+            $scope.initStuff();
+        });
 
         $scope.initPlannedCourses = function() {
             $scope.plannedCourses = [];
+            $scope.sumPlannedCredits = 0.0;
             $scope.$broadcast("removeAllCourses");
         };
 
@@ -237,6 +335,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
                 plannedCourse.sectionType = section.sectionType;
                 $scope.plannedCourses.push(plannedCourse);
             }
+            $scope.sumPlannedCredits += course.credits;
 
             var elId = '#plannedCourse-' + ($scope.plannedCourses.length - 1).toString();
 
@@ -254,6 +353,8 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             var i = $scope.plannedCourses.indexOf(course);
             if (i > -1)
                 $scope.plannedCourses.splice(i, 1);
+
+            $scope.sumPlannedCredits -= course.credits;
         };
 
         $scope.showTempEvent = function(course, section) {
@@ -276,7 +377,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
         };
 
         $scope.savePlan = function() {
-            if (!$scope.loggedIn) {
+            if (!$rootScope.loggedIn) {
                 $('#loginModal').modal('show');
             } else {
                 //TODO: save the plan to the database under the current session
@@ -286,69 +387,6 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
 
         $scope._savePlan = function() {
             $scope.saved = true;
-        };
-
-        $scope.addAlert = function(message) {
-            $scope.signinAlerts.push({msg: message});
-        };
-
-        $scope.closeAlert = function(index) {
-            $scope.signinAlerts.splice(index, 1);
-        };
-
-        $scope.signInUser = function() {
-            $scope.signinAlerts.length = 0;
-            if (!($scope.loginUsername && $scope.loginUsername.length && $scope.loginPassword && $scope.loginPassword.length)) {
-                $scope.addAlert("All fields are required.");
-            } else {
-                $scope.loggedIn = true;
-                $scope.username = $scope.loginUsername;
-                $('#loginModal').modal('hide');
-                $scope._savePlan();
-            }
-        };
-
-        $scope.signOutUser = function() {
-            $scope.initStuff();
-            $scope.loggedIn = false;
-        };
-
-        $scope.createUserAccount = function() {
-            console.log("creating user account");
-            $scope.signinAlerts.length = 0;
-            if (!($scope.createUsername && $scope.createUsername.length && $scope.createPassword && $scope.createPassword.length && $scope.createPassword2 && $scope.createPassword2.length)) {
-                $scope.addAlert("All fields are required.");
-            } else if (!/^[a-z0-9_\-@]+$/i.test($scope.createUsername)) {
-                $scope.addAlert("Username cannot contain special characters other than -, _, and @.");
-            } else if ($scope.createPassword != $scope.createPassword2) {
-                $scope.addAlert("Passwords do not match.");
-            } else {
-                $scope.registerUser($scope.createUsername, $scope.createPassword);
-            }
-        };
-
-        $scope.registerUser = function(username, password) {
-
-            $http.get('http://andyetitcompiles.com/auth/login').success(function(data, status, headers) {
-                data['username'] = username;
-                data['pass'] = doHash(password, data['pepper']);
-
-                $http.post('http://andyetitcompiles.com/auth/register', data)
-                    .success(function(data) {
-                        console.log(data);
-                        // successful
-                        $scope.loggedIn = true;
-                        $scope.username = username;
-                        $('#loginModal').modal('hide');
-                    }).error(function(data) {
-                        //console.log(data);
-                        // username already exists?
-                        $scope.addAlert("There was a problem with your username or password.");
-                    });
-            }).error(function(data) {
-                $scope.addAlert("There was an error creating your account.");
-            });
-
         };
 
         $scope.registerClasses = function() {
@@ -379,6 +417,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
 
 classregControllers.controller('CalendarCtrl', ['$scope',
     function($scope) {
+        var calendar = $('#calendar');
         var sunday = new Date(moment().startOf('week'));
         var d = sunday.getDate();
         var m = sunday.getMonth();
@@ -387,11 +426,11 @@ classregControllers.controller('CalendarCtrl', ['$scope',
 
         $scope.uiConfig = {
             calendar:{
-                //height: 450,
+                height: 1000,
                 editable: false,
                 defaultView: 'agendaWeek',
                 minTime: '06:00',
-                maxTime: '21:00',
+                maxTime: '22:00',
                 allDaySlot: false,
                 allDayText: false,
                 slotMinutes: 60,
@@ -427,12 +466,12 @@ classregControllers.controller('CalendarCtrl', ['$scope',
             }
         };
 
-// this is never used but it's necessary for the fullcalendar
+        // this is never used but it's necessary for the the fullcalendar plugin
+        // instead, i just dynamically render and remove events
         $scope.eventSources = [];
 
         $scope.addCourseToCalendar = function(course, classPeriods, classLocation, color, className) {
             for (var k in classPeriods) {
-                // ["1:00", "2:00"]
                 var timespan = k.split('-');
                 var days = classPeriods[k];
                 days = days.split(/[ ,]+/);
@@ -460,19 +499,23 @@ classregControllers.controller('CalendarCtrl', ['$scope',
                     event.description = classLocation;
                     event.allDay = false;
 
-                    if ($scope.eventConflicts(event)) {
-                        color = conflictingEventColor
+                    // when you add a section, new conflicts may be introduced
+                    var conflictingEvents = $scope.eventConflicts(event, null);
+                    if (conflictingEvents.length) {
+                        color = conflictingEventColor;
+                        if (className != 'temp')
+                            $scope.updateConflictsOnAdd(conflictingEvents);
                     }
 
                     event.color = color;
                     event.className = className;
 
-                    $('#calendar').fullCalendar('renderEvent', event);
+                    calendar.fullCalendar('renderEvent', event);
                 }
             }
         };
 
-        $scope.eventConflicts = function(event) {
+        $scope.eventConflicts = function(event, conflictToIgnore) {
             var start = new Date(event.start);
             var end = new Date(event.end);
 
@@ -484,10 +527,11 @@ classregControllers.controller('CalendarCtrl', ['$scope',
 
                 // overlaps and it's not the same course
                 return ((Math.round(estart)/1000 < Math.round(end)/1000 && Math.round(eend) > Math.round(start)) &&
-                    (ev.title.split('-')[0] != event.title.split('-')[0]));
+                    (ev.title.split('-')[0] != event.title.split('-')[0]) &&
+                    (conflictToIgnore != ev.title));
             });
 
-            return (overlap.length);
+            return overlap;
         };
 
         $scope.isTemp = function(event) {
@@ -508,21 +552,59 @@ classregControllers.controller('CalendarCtrl', ['$scope',
         });
 
         $scope.$on("courseRemoved", function (event, args) {
-            // remove only events with class 'temp'
-            $('#calendar').fullCalendar('removeEvents', function (calEvent) {
+            var calendar = $('#calendar');
+
+            if (!args.temp) {
+                $scope.updateConflictsOnRemove(args.course);
+            }
+
+            calendar.fullCalendar('removeEvents', function (calEvent) {
                 return (calEvent.title == args.course) &&
                     ((args.temp && $scope.isTemp(calEvent)) || (!args.temp && !$scope.isTemp(calEvent)));
             });
         });
 
-        // changes *all* events of a certain course (ignoring section)
+        // origCourse -- will update any conflicts touching the conflict source (which is a course name, no section, like "CS142")
+        // in the case we are removing a course, we'll need to ignore that course
+        // this is a complicated & expensive process because the courses left over may or may not be affected by the removed course
+        $scope.updateConflictsOnRemove = function(conflictSourceCourseName) {
+            var conflictSource = conflictSourceCourseName.split('-');
+            var conflictSourceCourse = conflictSource[0];
+            var coursesUpdated = [];
+            calendar.fullCalendar('clientEvents', function(event) {
+                if (conflictSourceCourse == $scope.getCourseName(event)) {
+                    var conflictingEvents = $scope.eventConflicts(event, null);
+                    for (var i = 0, len = conflictingEvents.length; i < len; i++) {
+                        var course = $scope.getCourseName(conflictingEvents[i]);
+                        if (coursesUpdated.indexOf(course) == -1) {
+                            coursesUpdated.push(course);
+                            $scope.$broadcast("changeEventColor", {course: course, color: eventColor, toIgnore: conflictSourceCourseName});
+                        }
+                    }
+                }
+            });
+        };
+
+        // check for any new conflicts introduced and change their color
+        $scope.updateConflictsOnAdd = function(conflictingEvents) {
+            calendar.fullCalendar('clientEvents', function(event) {
+                if (conflictingEvents.indexOf(event) != -1) {
+                    event.color = conflictingEventColor;
+                    calendar.fullCalendar('updateEvent', event);
+                }
+            });
+        };
+
+        // changes *all* events of a certain course (ignoring section), checking for conflicts
+        // this is a big expensive if you don't need to check for conflicts
         $scope.$on("changeEventColor", function (event, args) {
             var calendar = $('#calendar');
             var events = calendar.fullCalendar('clientEvents');
+            var conflictToIgnore = args.toIgnore;
             for (var i = 0, len = events.length; i < len; i++) {
                 event = events[i];
                 if ($scope.getCourseName(event) == args.course) {
-                    event.color = $scope.eventConflicts(event) ? conflictingEventColor : args.color;
+                    event.color = $scope.eventConflicts(event, conflictToIgnore).length && args.color != greyedOutEventColor ? conflictingEventColor : args.color;
                     calendar.fullCalendar('updateEvent', event);
                 }
             }
