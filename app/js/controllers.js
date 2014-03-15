@@ -408,6 +408,7 @@ classregControllers.controller('CourseListCtrl', ['$scope', '$http', '$cookies',
             var domain = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
             var query = '?service='+encodeURIComponent(domain+'/register.html');
             var url = 'https://cas.byu.edu/cas/login';
+
             var regFrame = $("#registration-iframe");
             regFrame.attr("src", url + query);
             $scope.initPlannedCourses();
