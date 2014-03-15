@@ -197,10 +197,20 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Register through BYU</h4>
+                <h4 class="modal-title">BYU Registration</h4>
             </div>
             <div class="modal-body">
-                <iframe id="registration-iframe"  width="510" height="500"></iframe><br>
+                <iframe id="registration-iframe"  width="510" height="500" style="display:none"></iframe><br>
+                <div class="well" id="registration-instructions">
+                    <h3 style="margin-top:0;">Say Hello to Batch Registration</h3>
+                    <div>We'll help you register for <b><i>all of your classes at once</i></b> in three simple steps:</div>
+                    <ol>
+                        <li><h4>Login To BYU</h4>Don't worry, we don't store your username and password.</li>
+                        <li><h4>Prove you are not a robot</h4>BYU requires that you verify your divine nature once every thirty minutes.</li>
+                        <li><h4>Let us do the rest</h4>We'll show you if each of your planned classes was registered to your BYU account.</li>
+                    </ol>
+                    <button class="btn btn-primary" onclick="$('#registration-iframe').show();$('#registration-instructions').hide()">Sounds Great, I'm in</button>
+                </div>
                 <button class="btn btn-xs btn-default" onclick="loadRegistrationPage()">Load Registration Page</button>
                 <button class="btn btn-xs btn-default" onclick="clearCaptchaCookies()">Clear Captcha Cookies</button>
             </div>
